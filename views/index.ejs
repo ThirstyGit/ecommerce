@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Front Page</title>
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+   <div class="nav">
+      <div>
+         <p class="title">Welcome to our e-commerce solution.</p>
+      </div>
+      <input class="search-bar">
+   </div>
+   <div class="center-page">
+      <div class="sidebar">
+         <p class="recent-order-title">Recent Shop List</p>
+         <div class="recent-order-lists">
+            <%recentShops.forEach(shop => {%>
+               <p class="recent-shop"><%=shop.name%></p>
+            <%})%>
+         </div>
+      </div>
+      <div class="shop-list">
+         <%shops.forEach(shop => {%>
+            <div class="shop">
+               <img src="<%=shop.src%>" class="shop-image">
+               <p class="shop-desc"><%=shop.name%></p>
+               <p >Rating: <%=shop.rating%>/5</p>
+            </div>
+         <%})%>
+      </div>
+      <div class="sidebar">
+         <p class="recent-order-title">bookmarked Shops</p>
+         <div class="recent-order-lists">
+            <%bookmarkedShops.forEach(shop => {%>
+               <p class="bookmarked-shops"><%=shop.name%></p>
+            <%})%>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
