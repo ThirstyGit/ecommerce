@@ -31,7 +31,18 @@ const bookmarkedShops = [
 
 // Basic routing.
 router.get('/', (req, res) => {
-   res.render(path.join(__dirname +  '/../views/index.ejs'), {shops, recentShops, bookmarkedShops});
+   if(req.user) {
+      res.send(
+         `
+         <h1>You are logged in.</h1>
+         <p>Shoaib still needs to work on when someone logs in.</p>
+         <a href='/auth/logout'><button>Log out</button></a>
+         `
+      )
+   }
+   else {
+      res.render(path.join(__dirname +  '/../views/index.ejs'), {shops, recentShops, bookmarkedShops});
+   }
 });
 
 

@@ -8,7 +8,17 @@ body {
    background-color: coral;
 }
 
+.button {
+   margin: 5px;
+   padding: 10px;
+   font-size: 25px;
+   border: 0px;
+   outline: none;
+   background-color: #26cc6e;
+}
 
-
+.button:hover{
+   background-color: #40e286;
+}
 
 

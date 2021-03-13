@@ -4,6 +4,11 @@
 You need to clone your specific branch each time for your task. Push into that branch and I shall merge if it is proper. For each new task I shall have a specific branch and you will only clone and push in that branch. **NEVER use the master branch.**
 
 ## Starting Guide.
+Create a File named ``.env`` in the project directory and write our database password. For example if my password is 123456:
+```bash
+DATABASE_PASSWORD = '123456'
+```
+
 Run the following commands to start.
 ```bash
 npm install
