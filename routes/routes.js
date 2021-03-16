@@ -43,4 +43,8 @@ router.get('/shop/product', (req, res) => {
    res.render(path.join(__dirname +  '/../views/product.ejs'));
 });
 
+router.get('/user', (req, res) => {
+   res.render(path.join(__dirname +  '/../views/user.ejs'));
+})
+
 module.exports = router;

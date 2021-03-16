@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+** {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1240px;
+  width:90%;
+  margin: auto;
+  background-color: #f6f6f6;
+  
+}
+.user{
+  
+}
+.user-card{
+  
+  height: 500px;
+  display: inline-block;
+  width: 33%;
+  float: left;
+  margin-top: 30px;
+  margin-right: auto;
+}
+.user-card1{
+  background-color: peru;
+  height: 500px;
+  display: inline-block;
+  width: 33%;
+  margin-top: 30px;
+}
+.user-card2{
+  background-color: rgb(255, 255, 255);
+  height: 500px;
+  display: inline-block;
+  width: 33%;
+  float:right;
+  margin-top: 30px;
+}
+.user-image{
+  
+}
+.user-image>img{
+  height: 500px;
+  width: 90%;
+}
+.user-info>ul{
+  list-style-type: none;
+  margin-left: 40px;
+  margin-top: 20px;
+  
+}
+.user-info>ul>li{
+   
+          float: left;
+          padding: 8px;
+  
+}
+
+input{
+          width: 170px;
+          height: 30px;
+          margin-left: 30px;
+          margin-top: 2px;
+          border: whitesmoke;
+          border-radius: 6px;
+          padding: 10px;
+          font-size:20px;
+          cursor: pointer;
+          font-weight: bold;
+      }
+input:hover{
+  border: 1px solid rgb(52, 52, 90);
+  }
+
+
+a{
+          text-decoration: none;
+          background-color:rgb(7, 153, 250);
+          width: 100px;
+          color: white;
+          font-size: 20px;
+          padding: 10px;
+          font-weight: bold;
+      }
+a:hover{
+  background-color: rgb(71, 74, 255);
+  color: rgb(255, 255, 255);
+      }
