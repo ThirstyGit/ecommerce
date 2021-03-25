@@ -11,6 +11,14 @@ p {
     color: rgb(131, 102, 64);
 }
 
+select {
+    width: 300px;
+    height: 35px;
+    font-size: 20px;
+    margin: 5px;
+    outline: none;
+}
+
 .form-container{
     background-color: rgb(161, 250, 208);
     width: 400px;

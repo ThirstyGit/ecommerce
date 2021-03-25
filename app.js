@@ -4,9 +4,12 @@ const app = express();
 const sessions = require('express-session');
 
 // User Defined modules.
+// routes.
 const routes = require('./routes/routes.js');
 const authRoutes = require('./routes/auth.js');
+const shopRoutes = require('./routes/shop.js');
 const authenticate = require('./middlewares/verify.js').authenticate;
+
 
 // For parsing form data.
 app.use(express.urlencoded({extended: true}));
@@ -23,8 +26,6 @@ app.use(sessions({
 }));
 app.use(authenticate);
 
-
-
 // Setting static folders.
 app.use(express.static('public'));
 app.use('/js', express.static(__dirname + '/public/js'));
@@ -35,6 +36,8 @@ app.set('view engine', 'ejs');
 // Setting up routes.
 app.use('/', routes);
 app.use('/auth', authRoutes);
+app.use('/shop', shopRoutes);
+
 
 // Starting the server.
 const port = process.env.PORT || 3000;

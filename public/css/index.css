@@ -7,23 +7,11 @@
 .header{
    display: grid;
    grid-template-columns: auto 250px;
-   
    background-color: rgb(35, 38, 44);
    padding: 10px ;
    transition: all 0.3s ease 0s;
 }
 
-.button {
-   padding: 10px 20px;
-   background-color: #8d9ceb ;
-   border: none; 
-   border-radius: 55px;
-   cursor: pointer;
-   transition: all 0.3s ease 0s;
- }
- .button:hover{
-    background-color: rgba(88, 81, 81, 0);
- }
  .div {
    transition-property: width;
    transition-duration: 2s;

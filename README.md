@@ -32,15 +32,6 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 <script type="text/javascript" src="/js/index.js"></script>
 ```
 
-## Development.
-- [x] Setting up initial Project. (James)
-- [x] Setting up dummy page. (James)
-- [x] Setup README file. (James)
-- [ ] ER Diagram. (Khalid)
-- [ ] Front Page. (Shoaib)
-- [ ] Shop Page. (Safat)
-- [ ] Product Page. (Nirob)
-
 ## Site links.
 1. [Front Page](http://localhost:3000/ "index.ejs")
 2. [Shop Page](http://localhost:3000/shop  "shop.ejs")
@@ -61,3 +52,9 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 </body>
 </html>
 ```
+
+## Bugs
+1. Main page side bars do not work when there is not enough shops.
+2. Shop divs need to be better sized and responsive in main page.
+3. Need to add a check so that there are not 2 shops with the same name.
+4. Need to make sure only images are uploaded when uploading a product image.
