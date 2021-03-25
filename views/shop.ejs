@@ -4,17 +4,24 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="/css/shop.css">
    <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/shop.css">
    <title>Shop</title>
 </head>
-
 <body>
+   <nav class="nav">
+      <div class="header">
+         <a href="/">Ecommerce solution</a>
+      </div>
+      <div class="nav-btn-container">
+         <button class="btn nav-btn" id="add-product">Add Product</button>
+      </div>
+   </nav>
    <div class="main-content">
       <div class="shop-info">
-         <p class="shop-name">Supermalt</p>
+         <p class="shop-name"><%=shop.name%></p>
       </div>
-      <img class="shop-img" src="http://myenglandtravel.com/images/Types-of-shops-in-Britain-1.jpg">
+      <img class="shop-img" src="/images/<%=shop.image%>">
       <h1 class="product-heading">Our Products</h1>
       <div class="all-products">
          <div class="product">
@@ -22,52 +29,8 @@
             <a href="/shop/product"><p class="product-name">Banana</p></a>
             <p class="product-price">Price: 1.00$</p>
          </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
       </div>
    </div>
+   <script type="text/javascript" src="/js/shop.js"></script>
 </body>
 </html>

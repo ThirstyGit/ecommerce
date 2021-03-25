@@ -24,7 +24,7 @@ module.exports.authenticate = (req, res, next) => {
 // Making sure that there is a data stored for user.
 module.exports.loginRequired = (req, res, next) => {
    if(!req.user) {
-      return res.redirect('/login')
+      return res.redirect('/auth/login')
    }
    else {
       next();

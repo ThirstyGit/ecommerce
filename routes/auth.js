@@ -60,8 +60,8 @@ router.post('/register', (req, res) => {
          }
          else {
             req.body.password = bcrypt.hashSync(req.body.password, 14); //hashing the password before saving it.
-            const sql = `INSERT INTO users(type, DOB, email, name,  password, phone)
-                              VALUES('${req.body.type}', ${db.escape(req.body.date)}, ${db.escape(req.body.email)}, ${db.escape(req.body.name)}, ${db.escape(req.body.password)}, ${db.escape(req.body.phone)})`;
+            const sql = `INSERT INTO users(DOB, email, name,  password, phone)
+                              VALUES(${db.escape(req.body.date)}, ${db.escape(req.body.email)}, ${db.escape(req.body.name)}, ${db.escape(req.body.password)}, ${db.escape(req.body.phone)})`;
             db.query(sql, (error, result) => {
                if(error) {
                   console.log(error);

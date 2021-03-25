@@ -3,21 +3,24 @@
    padding: 0px;
    font-family: Ubuntu, sans-serif;
 }
-
+a {
+   text-decoration: none;
+}
 body {
    background-color: rgb(245, 237, 235);
+   height: 100vh;
+   width: 100vw;
 }
-
-.button {
+.btn {
    margin: 5px;
    padding: 10px;
    font-size: 25px;
    border: 0px;
    outline: none;
    background-color: #26cc6e;
+   cursor: pointer;
 }
-
-.button:hover{
+.btn:hover{
    background-color: #40e286;
 }
 

@@ -15,20 +15,26 @@
          <div class="search_wrap">
             <div class="search_box">
                <input type="text" class="input" placeholder="Ex. Eggs,Rokomary......">
-                  <div class="btn btn_common">
-                    <a href=""><i class="fas fa-search">Find</i></a>
-                  </div>
+               <div class="btn btn_common">
+                  <a href=""><i class="fas fa-search">Find</i></a>
+               </div>
             </div>
          </div>
       </div>
       <div style="padding-top: 10px;">
-         <div class="button" style="display: inline;">
-            <a href=""><i>Sign Up</i></a>
-         </div>
-         <div class="button" style="display: inline;">
-            <a href=""><i>Log In</i></a>
-         </div> 
-   </div>
+         <%if(user){%>
+            <div class="btn" style="display: inline;">
+               <a href="/shop/create"><i>Create shop</i></a>
+            </div>
+         <%} else {%>
+            <div class="btn" style="display: inline;">
+               <a href="/auth/register"><i>Sign Up</i></a>
+            </div>
+            <div class="btn" style="display: inline;">
+               <a href="/auth/login"><i>Log In</i></a>
+            </div> 
+         <%}%>
+      </div>
    </div>
    <div class="center-page">
       <div class="sidebar">
@@ -41,11 +47,13 @@
       </div>
       <div class="shop-list">
          <%shops.forEach(shop => {%>
-            <div class="shop">
-               <img src="<%=shop.src%>" class="shop-image">
-               <p class="shop-desc"><%=shop.name%></p>
-               <p >Rating: <%=shop.rating%>/5</p>
-            </div>
+            <a href="/shop/<%=shop.id%>">
+               <div class="shop">
+                  <img src="/images/<%=shop.image%>" class="shop-image">
+                  <p class="shop-desc"><%=shop.name%></p>
+                  <p >Rating: <%=shop.rating%>/5</p>
+               </div>
+            </a>
          <%})%>
       </div>
       <div class="sidebar">
