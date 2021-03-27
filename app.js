@@ -8,6 +8,8 @@ const sessions = require('express-session');
 const routes = require('./routes/routes.js');
 const authRoutes = require('./routes/auth.js');
 const shopRoutes = require('./routes/shop.js');
+const productRoutes = require('./routes/product.js');
+// Middlewares.
 const authenticate = require('./middlewares/verify.js').authenticate;
 
 
@@ -37,7 +39,7 @@ app.set('view engine', 'ejs');
 app.use('/', routes);
 app.use('/auth', authRoutes);
 app.use('/shop', shopRoutes);
-
+app.use('/product', productRoutes);
 
 // Starting the server.
 const port = process.env.PORT || 3000;

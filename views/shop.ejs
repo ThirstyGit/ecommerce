@@ -27,7 +27,7 @@
          <%if(products.length) {%>
             <%products.forEach(prod => {%>
                <div class="product">
-                  <a href="/shop/product"><img class="product-image" src="/images/<%=prod.image%>"></a>
+                  <a href="/product/<%=prod.id%>"><img class="product-image" src="/images/<%=prod.image%>"></a>
                   <a href="/shop/product"><p class="product-name"><%=prod.name%></p></a>
                   <p class="product-price">Price: <%=prod.price%> Tk</p>
                </div>

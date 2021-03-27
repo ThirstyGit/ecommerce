@@ -74,8 +74,4 @@ router.post('/:id/addproduct', upload.single('file'), (req, res) => { //upload.s
    })
 })
 
-router.get('/product', (req, res) => {
-   res.render(path.join(__dirname +  '/../views/product.ejs'));
-});
-
 module.exports = router;
