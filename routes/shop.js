@@ -69,7 +69,7 @@ router.post('/:id/addproduct', upload.single('file'), (req, res) => { //upload.s
          console.error(err)
       }
       else {
-         res.redirect(`/shop/:${db.escape(req.body.id)}`);
+         res.redirect(`/shop/${req.params.id}`);
       }
    })
 })

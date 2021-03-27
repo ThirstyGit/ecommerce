@@ -59,4 +59,3 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 3. Need to add a check so that there are not 2 shops with the same name.
 4. Need to make sure only images are uploaded when uploading a product image.
 5. Need to accept description when adding a product.
-6. Wrong redirects after adding product to shop.
