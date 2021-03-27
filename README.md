@@ -13,7 +13,7 @@ Run the following commands to start.
 ```bash
 npm install
 ```
-The server for testing can be run by using the following command.
+Make sure to first start the database server and the server for testing can be run by using the following command.
 ```bash
 npm run dev
 ```

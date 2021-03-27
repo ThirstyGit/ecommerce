@@ -38,13 +38,20 @@ router.post('/create', loginRequired, (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-   const sql = `SELECT * FROM shops WHERE ID = ${db.escape(req.params.id)}`; //Information about the specific shop.
+   const sql = `SELECT * FROM shops WHERE id = ${db.escape(req.params.id)}`; //Information about the specific shop.
    db.query(sql, (err, shops) => {
       if(err) {
          shops = {};
          console.error(err);
       }
-      res.render(path.join(__dirname +  '/../views/shop.ejs'), {shop: shops[0]});
+      const sql = `SELECT * FROM products WHERE shops_id = ${db.escape(req.params.id)}`;
+      db.query(sql, (err, products) => {
+         if(err) {
+            console.error(err);
+            products = {}
+         }
+         res.render(path.join(__dirname +  '/../views/shop.ejs'), {shop: shops[0], products});
+      })
    })
 });
 

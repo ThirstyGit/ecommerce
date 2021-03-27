@@ -24,11 +24,17 @@
       <img class="shop-img" src="/images/<%=shop.image%>">
       <h1 class="product-heading">Our Products</h1>
       <div class="all-products">
-         <div class="product">
-            <a href="/shop/product"><img class="product-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fregmedia.co.uk%2F2016%2F01%2F11%2Fbananas_teaser.jpg%3Fx%3D1200%26y%3D794&f=1&nofb=1"></a>
-            <a href="/shop/product"><p class="product-name">Banana</p></a>
-            <p class="product-price">Price: 1.00$</p>
-         </div>
+         <%if(products.length) {%>
+            <%products.forEach(prod => {%>
+               <div class="product">
+                  <a href="/shop/product"><img class="product-image" src="/images/<%=prod.image%>"></a>
+                  <a href="/shop/product"><p class="product-name"><%=prod.name%></p></a>
+                  <p class="product-price">Price: <%=prod.price%> Tk</p>
+               </div>
+            <%})%>
+         <%} else {%>
+            <h1>No Products were added yet.</h1>
+         <%}%>
       </div>
    </div>
    <script type="text/javascript" src="/js/shop.js"></script>
