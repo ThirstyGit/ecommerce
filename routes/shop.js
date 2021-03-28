@@ -59,10 +59,9 @@ router.get('/:id/addproduct', (req, res) => {
    res.render(path.join(__dirname +  '/../views/addProduct.ejs'));
 })
 
-
 router.post('/:id/addproduct', upload.single('file'), (req, res) => { //upload.single comes from multer. Used to upload files.
-   const sql = `INSERT INTO products(name, price, image, shops_id)
-                           Values(${db.escape(req.body.name)}, ${Number(req.body.price)}, ${db.escape(req.file.filename)}, ${db.escape(req.params.id)})`;
+   const sql = `INSERT INTO products(name, price, image, description, shops_id)
+                           Values(${db.escape(req.body.name)}, ${Number(req.body.price)}, ${db.escape(req.file.filename)}, ${db.escape(req.body.description)}, ${db.escape(req.params.id)})`;
    db.query(sql, (err, result) => {
       if(err) {
          res.redirect(`/shop/${req.params.id}/addproduct`);

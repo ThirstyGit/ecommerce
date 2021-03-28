@@ -8,14 +8,18 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet">
     </head>
     <body>
+        <nav>
+            <a href="/"><button class="btn">Home Page</button></a>
+            <a href="/shop/<%=product.shops_id%>"><button class="btn">Shop Page</button></a>
+        </nav>
         <h1 class="product-name"><%=product.name%></h1>
         <div class="main-container">
             <div class="product-card" >
                 <img class="product-image" src="/images/<%=product.image%>">
             </div>
             <div class="product-options">
-                <div class="product-description">
-                    <h5>We are proud to be the first official OMEGA vintage store. We have a large selection of OMEGA Vintage Watches for sale as well as other prestigious brands such as Patek Philippe, Cartier and Vacheron & Constantin. We also stock many rare early timepieces by some of the most influential watchmakers in history from likes of Breguet, Mudge and Tompion.</h5>
+                <div class="product-description-container">
+                    <p class=""><%=product.description%></p>
                 </div>
                 <input type="text" placeholder="Quantity">
                 <button class="btn product-btn">

@@ -6,16 +6,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/createShop.css">
+    <link rel="stylesheet" type="text/css" href="/css/addProduct.css">
     <title>Register</title>
 </head>
 <body>
     <div class="form-container">
         <form class="form register-form" id="form" method="POST" enctype="multipart/form-data">
-            <h1 class="header">Sign Up</h1>
+            <h1 class="header">New Product</h1>
             <input class="form-input" type="text" id ="name" name="name" placeholder="Name">
             <input class="form-input" type="text" id ="price" name="price" placeholder="Price">
-            <input type="file" name="file">
+            <div class="upload-main-container">
+                <div class="upload-container" id="upload-container">
+                    <div class="image-container">
+                        <img src="" alt="" id="preview-image" class="preview-image">
+                    </div>
+                    <div class="content">
+                        <div class="upload-text">Upload an Image.</div>
+                    </div>
+                    <div class="cancel-button" id="cancel-button">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="file-container">
+                    <input type="file" name="file" id="file-input" hidden>
+                    <button type="button" class="main-button" id="main-button">UPLOAD</button>
+                </div>
+            </div>
+            <textarea name="description" class="description" placeholder="Description"></textarea>
             <button type="button" class="btn" id="new-shop">Add Product</button>
             <a href="/">Home</a>
         </form>
