@@ -1,8 +1,9 @@
-body{
+.main-body{
     display: flex;
-    height: 95vh;
+    height: calc(100vh - 133px);
     justify-content: center;
     align-items: center;
+    min-height: 500px;
 }
 
 .form-container{

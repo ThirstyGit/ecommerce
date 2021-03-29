@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/register.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Register</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/register.css">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+   <title>Register</title>
 </head>
 <body>
-    <div class="form-container">
-        <form class="form register-form" action="/auth/register" method="POST">
+   <nav class="nav">
+      <a href="/" class="main-header">Ecommerce solution</a>
+      <div class="nav-buttons">
+         <a href="/auth/login"><button class="btn" type="button">Sing In</button></a>
+      </div>
+   </nav>
+   <div class="main-body">
+      <div class="form-container">
+         <form class="form" action="/auth/register" method="POST">
             <h1 class="header">Sign Up</h1>
             <p>Must be at least 4 characters.</p>
             <input class="form-input" id ="name" name="name" type="text" placeholder="Name">
@@ -22,10 +29,9 @@
             <input class="form-input" id ="phone" name="phone" type="text" placeholder="Phone Number">
             <input class="form-input" id ="date" name="date" type="date">
             <button type="button" class="btn" id="register">Sign Up</button>
-            <a href="/auth/login">Log In</a>
-            <a href="/">Home</a>
-        </form>
-    </div>
-    <script type="text/javascript" src="/js/register.js"></script>
+         </form>
+      </div>
+   </div>
+   <script type="text/javascript" src="/js/register.js"></script>
 </body>
 </html>

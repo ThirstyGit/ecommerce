@@ -54,12 +54,13 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 ```
 
 ## Todo
-1. Need to have a log out feature.
-2. Shops need to be able to upload their own image.
+1. Shops need to be able to upload their own image.
 3. We need better fonts.
 4. Need to add alt property to images.
-5. Ability to go to home page/ shop page from product page.
-6. Need to replace dummy data on the index mage.
+6. Need to replace dummy data on the index page.
+8. Make a purchase page.
+9. Make a page for transaction.
+10. Products need a comment section.
 
 ## Bugs
 1. Main page side bars do not work when there is not enough shops.
@@ -67,6 +68,6 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 3. Need to add a check so that there are not 2 shops with the same name.
 4. Need to make sure only images are uploaded when uploading a product image.
 5. Prodcuts should have a limit using js of how many can be added to the cart.
-6. Products need a comment section.
 7. Should make sure non shop ids are redirected.
-
+8. shop page height needs to be fixed.
+10. Can't go back to shop page from product page when loged out.

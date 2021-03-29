@@ -10,31 +10,38 @@
 </head>
 <body>
    <nav class="nav">
-      <div class="header">
-         <a href="/">Ecommerce solution</a>
-      </div>
-      <div class="nav-btn-container">
-         <button class="btn nav-btn" id="add-product">Add Product</button>
+      <a href="/" class="main-header">Ecommerce solution</a>
+      <input class="search-bar" type="text">
+      <div class="nav-buttons">
+         <%if(user) {%>
+            <button class="btn" id="add-product">Add</button>
+            <a href="/auth/logout"><button class="btn" type="button">Sign Out</button></a>
+         <%} else {%>
+            <a href="/auth/register"><button class="btn" type="button">Sign Up</button></a>
+            <a href="/auth/login"><button class="btn" type="button">Sign In</button></a>
+         <%}%>
       </div>
    </nav>
-   <div class="main-content">
-      <div class="shop-info">
-         <p class="shop-name"><%=shop.name%></p>
-      </div>
-      <img class="shop-img" src="/images/<%=shop.image%>">
-      <h1 class="product-heading">Our Products</h1>
-      <div class="all-products">
-         <%if(products.length) {%>
-            <%products.forEach(prod => {%>
-               <div class="product">
-                  <a href="/product/<%=prod.id%>"><img class="product-image" src="/images/<%=prod.image%>"></a>
-                  <a href="/product/<%=prod.id%>"><p class="product-name"><%=prod.name%></p></a>
-                  <p class="product-price">Price: <%=prod.price%> Tk</p>
-               </div>
-            <%})%>
-         <%} else {%>
-            <h1>No Products were added yet.</h1>
-         <%}%>
+   <div class="main-body">
+      <div class="main-content">
+         <div class="shop-info">
+            <p class="shop-name"><%=shop.name%></p>
+         </div>
+         <img class="shop-img" src="/images/<%=shop.image%>">
+         <h1 class="product-heading">Our Products</h1>
+         <div class="all-products">
+            <%if(products.length) {%>
+               <%products.forEach(prod => {%>
+                  <div class="product">
+                     <a href="/product/<%=prod.id%>"><img class="product-image" src="/images/<%=prod.image%>"></a>
+                     <a href="/product/<%=prod.id%>"><p class="product-name"><%=prod.name%></p></a>
+                     <p class="product-price">Price: <%=prod.price%> Tk</p>
+                  </div>
+               <%})%>
+            <%} else {%>
+               <h1>No Products were added yet.</h1>
+            <%}%>
+         </div>
       </div>
    </div>
    <script type="text/javascript" src="/js/shop.js"></script>

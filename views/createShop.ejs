@@ -7,36 +7,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/createShop.css">
-    <title>Register</title>
+    <title>Create a new shop</title>
 </head>
 <body>
-    <div class="form-container">
-        <form class="form register-form" action="/shop/create" method="POST">
-            <h1 class="header">Sign Up</h1>
-            <input class="form-input" id ="name" name="name" type="text" placeholder="Name">
-            <select name="city" id="city">
-                <option value="dhaka">Dhaka</option>
-                <option value="chittagong">Chittagong</option>
-                <option value="khulna">Khulna</option>
-                <option value="rajshahi">Rajshahi</option>
-                <option value="gazipur">Gazipur</option>
-                <option value="sylhet">Sylhet</option>
-                <option value="mymensingh">Mymensingh</option>
-                <option value="barisal">Barisal</option>
-                <option value="rangpur">Rangpur</option>
-                <option value="comilla">Comilla</option>
-                <option value="narayanganj">Narayanganj</option>
-            </select>
-            <select name="area" id="area">
-                <option value="dhanmondi">Dhanmondi</option>
-                <option value="mirpur">Mirpur</option>
-                <option value="banani">Banani</option>
-                <option value="gulshan">Gulshan</option>
-            </select>
-            <button type="button" class="btn" id="new-shop">Create Shop</button>
-            <a href="/">Home</a>
-        </form>
-    </div>
-    <script type="text/javascript" src="/js/createShop.js"></script>
+   <nav class="nav">
+      <a href="/" class="main-header">Ecommerce solution</a>
+      <input class="search-bar" type="text">
+      <div class="nav-buttons">
+         <%if(user) {%>
+            <a href="/shop/create"><button class="btn" type="button">New</button></a>
+            <a href="/auth/logout"><button class="btn" type="button">Sign Out</button></a>
+         <%} else {%>
+            <a href="/auth/register"><button class="btn" type="button">Sign Up</button></a>
+            <a href="/auth/login"><button class="btn" type="button">Sign In</button></a>
+         <%}%>
+      </div>
+   </nav>
+   <div class="main-body">
+      <div class="form-container">
+         <form class="form" action="/shop/create" method="POST">
+               <h1 class="header">Sign Up</h1>
+               <input class="form-input" id ="name" name="name" type="text" placeholder="Name">
+               <select name="city" id="city">
+                  <option value="dhaka">Dhaka</option>
+                  <option value="chittagong">Chittagong</option>
+                  <option value="khulna">Khulna</option>
+                  <option value="rajshahi">Rajshahi</option>
+                  <option value="gazipur">Gazipur</option>
+                  <option value="sylhet">Sylhet</option>
+                  <option value="mymensingh">Mymensingh</option>
+                  <option value="barisal">Barisal</option>
+                  <option value="rangpur">Rangpur</option>
+                  <option value="comilla">Comilla</option>
+                  <option value="narayanganj">Narayanganj</option>
+               </select>
+               <select name="area" id="area">
+                  <option value="dhanmondi">Dhanmondi</option>
+                  <option value="mirpur">Mirpur</option>
+                  <option value="banani">Banani</option>
+                  <option value="gulshan">Gulshan</option>
+               </select>
+               <button type="button" class="btn" id="new-shop">Create Shop</button>
+               <a href="/">Home</a>
+         </form>
+      </div>
+   </div>
+   <script type="text/javascript" src="/js/createShop.js"></script>
 </body>
 </html>

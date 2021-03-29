@@ -33,7 +33,6 @@ router.post('/login', (req, res) => {
 
 // Routes for login.
 router.get('/logout', (req, res) => {
-   console.log('here');
    req.session.destroy((err) => {
       if(err) {
          console.log(err);

@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/addProduct.css">
-    <title>Register</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/addProduct.css">
+   <title>New Product</title>
 </head>
 <body>
-    <div class="form-container">
-        <form class="form register-form" id="form" method="POST" enctype="multipart/form-data">
+   <nav class="nav">
+      <a href="/" class="main-header">Ecommerce solution</a>
+      <input class="search-bar" type="text">
+      <div class="nav-buttons">
+         <%if(user) {%>
+            <a href="/shop/create"><button class="btn" type="button">New</button></a>
+            <a href="/auth/logout"><button class="btn" type="button">Sing Out</button></a>
+         <%} else {%>
+            <a href="/auth/register"><button class="btn" type="button">Sing Up</button></a>
+            <a href="/auth/login"><button class="btn" type="button">Sing In</button></a>
+         <%}%>
+      </div>
+   </nav>
+   <div class="main-body">
+      <div class="form-container">
+         <form class="form" id="form" method="POST" enctype="multipart/form-data">
             <h1 class="header">New Product</h1>
             <input class="form-input" type="text" id ="name" name="name" placeholder="Name">
             <input class="form-input" type="text" id ="price" name="price" placeholder="Price">
             <div class="upload-main-container">
-                <div class="upload-container" id="upload-container">
-                    <div class="image-container">
-                        <img src="" alt="" id="preview-image" class="preview-image">
-                    </div>
-                    <div class="content">
-                        <div class="upload-text">Upload an Image.</div>
-                    </div>
-                    <div class="cancel-button" id="cancel-button">
-                        <i class="fa fa-times"></i>
-                    </div>
-                </div>
-                <div class="file-container">
-                    <input type="file" name="file" id="file-input" hidden>
-                    <button type="button" class="main-button" id="main-button">UPLOAD</button>
-                </div>
+               <div class="upload-container" id="upload-container">
+                  <div class="image-container">
+                     <img src="" alt="" id="preview-image" class="preview-image">
+                  </div>
+                  <div class="content">
+                     <div class="upload-text">Upload an Image.</div>
+                  </div>
+                  <div class="cancel-button" id="cancel-button">
+                     <i class="fa fa-times"></i>
+                  </div>
+               </div>
+               <div class="file-container">
+                  <input type="file" name="file" id="file-input" hidden>
+                  <button type="button" class="main-button" id="main-button">UPLOAD</button>
+               </div>
             </div>
             <textarea name="description" class="description" placeholder="Description"></textarea>
             <button type="button" class="btn" id="new-shop">Add Product</button>
-            <a href="/">Home</a>
-        </form>
-    </div>
-    <script type="text/javascript" src="/js/addProduct.js"></script>
+         </form>
+      </div>
+   </div>
+   <script type="text/javascript" src="/js/addProduct.js"></script>
 </body>
 </html>

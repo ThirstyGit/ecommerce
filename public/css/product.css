@@ -2,15 +2,19 @@
     margin: 0;
     padding: 0;
 }
-body {
-    background-color: #f6f6f6;
-}
-input{
+.quantity-input{
     width: 80%;
     height: 30px;
     padding: 10px;
     font-size:25px;
     font-weight: bold;
+}
+.main-body{
+   display: flex;
+   height: calc(100vh - 133px);
+   justify-content: center;
+   align-items: center;
+   min-height: 800px;
 }
 .product-name {
     text-align: center;
@@ -45,7 +49,12 @@ input{
     height: 450px;
     background-color: #c5c5c5;
 }
-
 .product-btn {
     margin-top: 20px;
+}
+.product-nav {
+   flex-direction: row-reverse;
+}
+.product-nav-btn-container {
+   margin-right: 10px;
 }
