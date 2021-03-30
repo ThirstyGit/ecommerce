@@ -13,14 +13,16 @@
    <nav class="nav">
       <a href="/" class="main-header">Ecommerce solution</a>
       <input class="search-bar" type="text">
-      <div class="nav-buttons">
-         <%if(user) {%>
-            <a href="/shop/create"><button class="btn" type="button">New</button></a>
-            <a href="/auth/logout"><button class="btn" type="button">Sign Out</button></a>
-         <%} else {%>
-            <a href="/auth/register"><button class="btn" type="button">Sign Up</button></a>
-            <a href="/auth/login"><button class="btn" type="button">Sign In</button></a>
-         <%}%>
+      <div class="dropdown-container">
+         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
+         <ul id="dropdown" class="dropdown-closed">
+            <%if(user) {%>
+               <li><a href="/auth/logout">Sign Out</a></li>
+            <%} else {%>
+               <li><a href="/auth/register">Sign Up</a></li>
+               <li><a href="/auth/login">Sign In</a></li>
+            <%}%>
+         </ul>
       </div>
    </nav>
    <div class="main-body">
@@ -52,6 +54,7 @@
          </form>
       </div>
    </div>
+   <script type="text/javascript" src="/js/script.js"></script>
    <script type="text/javascript" src="/js/createShop.js"></script>
 </body>
 </html>

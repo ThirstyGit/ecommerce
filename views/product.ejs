@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <title><%=product.name%></title>
-      <link rel="stylesheet" type="text/css" href="/css/style.css">
-      <link rel="stylesheet" type="text/css" href="/css/product.css">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet">
-   </head>
-   <body>
-      <nav class="nav">
-         <a href="/" class="main-header">Ecommerce solution</a>
-         <input class="search-bar" type="text">
-         <div class="nav-buttons">
+<head>
+   <meta charset="UTF-8">
+   <title><%=product.name%></title>
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/product.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+   <nav class="nav">
+      <a href="/" class="main-header">Ecommerce solution</a>
+      <input class="search-bar" type="text">
+      <div class="dropdown-container">
+         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
+         <ul id="dropdown" class="dropdown-closed">
             <%if(user) {%>
-               <a href="/shop/<%=product.shops_id%>"><button class="btn" type="button">Shop</button></a>
-               <a href="/auth/logout"><button class="btn" type="button">Sign Out</button></a>
+               <li><a href="/shop/<%=product.shops_id%>">Shop</a></li>
+               <li><a href="/auth/logout">Sign Out</a></li>
             <%} else {%>
-               <a href="/auth/register"><button class="btn" type="button">Sign Up</button></a>
-               <a href="/auth/login"><button class="btn" type="button">Sign In</button></a>
+               <li><a href="/auth/register">Sign Up</a></li>
+               <li><a href="/auth/login">Sign In</a></li>
             <%}%>
-         </div>
-      </nav>
-      <div class="main-body">
-         <div class="mid-body">
-            <h1 class="product-name"><%=product.name%></h1>
-            <div class="main-container">
-               <div class="product-card" >
-                  <img class="product-image" src="/images/<%=product.image%>">
+         </ul>
+      </div>
+   </nav>
+   <div class="main-body">
+      <div class="mid-body">
+         <h1 class="product-name"><%=product.name%></h1>
+         <div class="main-container">
+            <div class="product-card" >
+               <img class="product-image" src="/images/<%=product.image%>">
+            </div>
+            <div class="product-options">
+               <div class="product-description-container">
+                  <p class=""><%=product.description%></p>
                </div>
-               <div class="product-options">
-                  <div class="product-description-container">
-                     <p class=""><%=product.description%></p>
-                  </div>
-                  <input class="quantity-input" type="text" placeholder="Quantity">
-                  <button class="btn product-btn">ADD TO CART</button>
-               </div>
+               <input class="quantity-input" type="text" placeholder="Quantity">
+               <button class="btn product-btn">ADD TO CART</button>
             </div>
          </div>
       </div>
-   </body>
+   </div>
+   <script type="text/javascript" src="/js/script.js"></script>
+</body>
 </html>
