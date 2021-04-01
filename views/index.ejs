@@ -11,10 +11,10 @@
 <body>
    <nav class="nav">
       <a href="/" class="main-header">Ecommerce solution</a>
-      <input class="search-bar" type="text">
+      <input class="search-bar" type="text" placeholder="Search.....">
       <div class="dropdown-container">
          <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
-         <ul id="dropdown" class="dropdown-closed">
+         <ul id="dropdown" class="dropdown">
             <%if(user) {%>
                <li><a href="/shop/create">New Shop</a></li>
                <li><a href="/auth/logout">Sign Out</a></li>

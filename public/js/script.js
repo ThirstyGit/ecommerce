@@ -2,20 +2,16 @@ const dropdownHamburger = document.querySelector('#dropdown-hamburger');
 const dropdown = document.querySelector('#dropdown');
 
 
-dropdownHamburger.addEventListener('click', () => {
-   if(dropdown.classList.contains('dropdown-closed')) {
-      dropdown.classList.remove('dropdown-closed');
-      dropdown.classList.add('dropdown-open');
+dropdownHamburger.addEventListener("click", () => {
+   if(window.getComputedStyle(dropdown).opacity === '0') {
+      dropdown.style.opacity = 1; 
+      dropdown.style.transform = 'translateY(0px)';
+      dropdown.style.pointerEvents = 'all';
    }
    else {
-      dropdown.classList.remove('dropdown-open');
-      dropdown.classList.add('dropdown-closed');
-   }
-})
-document.addEventListener('click', (e) => {
-   if(e.target != dropdownHamburger && dropdown.classList.contains('dropdown-open')) {
-      dropdown.classList.remove('dropdown-open');
-      dropdown.classList.add('dropdown-closed');
+      dropdown.style.opacity = 0;
+      dropdown.style.transform = 'translateY(-20px)';
+      dropdown.style.pointerEvents = 'none';
    }
 })
 
