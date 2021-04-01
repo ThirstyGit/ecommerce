@@ -9,7 +9,7 @@ a {
 }
 body {
    background-color: rgb(245, 237, 235);
-   min-width: 800px;
+   /* min-width: 800px; */
 }
 .btn {
    margin: 5px;

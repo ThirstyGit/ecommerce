@@ -73,4 +73,22 @@ router.post('/:id/addproduct', upload.single('file'), (req, res) => { //upload.s
    })
 })
 
+router.get('/:id/changeimage', (req, res) => {
+   res.render(path.join(__dirname +  '/../views/changeImage.ejs'), {shop_id: req.params.id});
+})
+
+router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.single comes from multer. Used to upload files.
+   const sql = `UPDATE shops SET image = ${db.escape(req.file.filename)} WHERE id = ${db.escape(req.params.id)}`;
+   db.query(sql, (err, result) => {
+      if(err) {
+         res.redirect(`/shop/${req.params.id}/changeimage`);
+         console.error(err)
+      }
+      else {
+         res.redirect(`/shop/${req.params.id}`);
+      }
+   })
+})
+
+
 module.exports = router;
