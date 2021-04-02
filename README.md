@@ -54,8 +54,7 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 ```
 
 ## Todo
-1. Shops need to be able to upload their own image.
-3. We need better fonts.
+1. We need better fonts.
 4. Need to add alt property to images.
 6. Need to replace dummy data on the index page.
 8. Make a purchase page.
@@ -71,3 +70,5 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 7. Should make sure non shop ids are redirected.
 8. shop page height needs to be fixed.
 10. Can't go back to shop page from product page when loged out.
+11. User DOB date shows in wrong timezone.
+12. User page currently assuming user has a shop.

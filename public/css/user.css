@@ -1,91 +1,70 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+label {
+   font-size: 30px;
+}
+form {
+   display: flex;
+   flex-direction: column;
+   padding: 0% 10%;
+}
+.form-input {
 
-** {
-  margin: 0;
-  padding: 0;
 }
-
-body {
-  max-width: 1240px;
-  width:90%;
-  margin: auto;
-  background-color: #f6f6f6;
-  
+.main-body {
+   display: flex;
 }
-.user{
-  
+.page-nav-container {
+   width: 50%;
 }
-.user-card{
-  
-  height: 500px;
-  display: inline-block;
-  width: 33%;
-  float: left;
-  margin-top: 30px;
-  margin-right: auto;
+.button-container {
+   display: flex;
+   flex-direction: column;
+   margin: 20vh 20%;
+   box-shadow: 0px 0px 20px black;
+   max-width: 400px;
 }
-.user-card1{
-  background-color: peru;
-  height: 500px;
-  display: inline-block;
-  width: 33%;
-  margin-top: 30px;
+.nav-button {
+   font-size: 20px;
+   padding: 20px 0px;
+   border: 0px;
+   outline: none;
+   background-color: #26cc6e;
+   cursor: pointer;
 }
-.user-card2{
-  background-color: rgb(255, 255, 255);
-  height: 500px;
-  display: inline-block;
-  width: 33%;
-  float:right;
-  margin-top: 30px;
+.nav-button:hover{
+   background-color: #40e286;
 }
-.user-image{
-  
+.user-container {
+   width: 50%;
+   padding-top: 20vh;
 }
-.user-image>img{
-  height: 500px;
-  width: 90%;
+.user-info {
+   margin-bottom: 20px;
 }
-.user-info>ul{
-  list-style-type: none;
-  margin-left: 40px;
-  margin-top: 20px;
-  
+.form-input {
+   font-size: 20px;
+   padding: .25em 0.5em;
+   margin-bottom: 15px;
+   outline: none;
 }
-.user-info>ul>li{
-   
-          float: left;
-          padding: 8px;
-  
+.form-input-button {
+   font-size: 25px;
+   padding: .5em 0.5em;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+   background-color: #26cc6e;
 }
-
-input{
-          width: 170px;
-          height: 30px;
-          margin-left: 30px;
-          margin-top: 2px;
-          border: whitesmoke;
-          border-radius: 6px;
-          padding: 10px;
-          font-size:20px;
-          cursor: pointer;
-          font-weight: bold;
-      }
-input:hover{
-  border: 1px solid rgb(52, 52, 90);
-  }
-
-
-a{
-          text-decoration: none;
-          background-color:rgb(7, 153, 250);
-          width: 100px;
-          color: white;
-          font-size: 20px;
-          padding: 10px;
-          font-weight: bold;
-      }
-a:hover{
-  background-color: rgb(71, 74, 255);
-  color: rgb(255, 255, 255);
-      }
+.form-input-button:hover {
+   background-color: #40e286;
+}
+.form-date {
+   cursor: pointer;
+}
+.info-container {
+   box-shadow: 0px 0px 20px black;
+   margin: 0px 5vw;
+   padding: 2em 20px;
+   border-radius: 5px;
+   max-width: 500px;
+}

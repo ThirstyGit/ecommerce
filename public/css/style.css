@@ -1,3 +1,4 @@
+/* Basic styling for all pages. */
 * {
    margin: 0px;
    padding: 0px;
@@ -11,6 +12,7 @@ body {
    background-color: rgb(245, 237, 235);
    /* min-width: 800px; */
 }
+/* Basic classes for all pages. */
 .btn {
    margin: 5px;
    padding: 10px;
@@ -23,6 +25,10 @@ body {
 .btn:hover{
    background-color: #40e286;
 }
+.hidden {
+   display: none;
+}
+/* For the nav bar that all pages are using. */
 .nav {
    background-color: rgb(35, 38, 44);
    width: 100%;

@@ -43,5 +43,7 @@ app.use('/product', productRoutes);
 
 // Starting the server.
 const port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(port, () => {
+   console.log('Server is up and running.😁');
+});
 
