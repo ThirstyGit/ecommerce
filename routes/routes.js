@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 
 // User imports
 const {loginRequired} = require('../middlewares/verify.js');
+const upload = require('../database/upload.js');
 
 // Dummy data. Will be replaced with a proper database.
 const recentShops = [
@@ -51,7 +52,6 @@ router.get('/user/:id', loginRequired, (req, res) => {
                res.redirect('/');
             }
             else {
-               console.log(shop[0]);
                res.render(path.join(__dirname +  '/../views/user.ejs'), {user: user[0], shop: shop[0]});
             }
          })
@@ -79,6 +79,22 @@ router.put('/changepassword', loginRequired, (req, res) => {
    db.query(sql, (err, result) => {
       if(err) {
          console.error(err);
+      }
+   })
+})
+
+router.get('/changeprofile', (req, res) => {
+   res.render(path.join(__dirname +  '/../views/changeprofile.ejs'));
+})
+
+router.post('/changeprofile', loginRequired, upload.single('file'), (req, res) => {
+   const sql = `UPDATE users SET image = ${db.escape(req.file.filename)} WHERE id = ${db.escape(req.user.id)}`;
+   db.query(sql, (err, result) => {
+      if(err) {
+         console.error(err);
+      }
+      else {
+         res.redirect(`/user/${req.user.id}`);
       }
    })
 })

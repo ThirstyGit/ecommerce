@@ -72,3 +72,5 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 10. Can't go back to shop page from product page when loged out.
 11. User DOB date shows in wrong timezone.
 12. User page currently assuming user has a shop.
+13. Sign up page has weird nav bug.
+14. Clicking submit without selecting an image should give error. Need this check for all image uploads.
