@@ -57,8 +57,7 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 1. We need better fonts.
 4. Need to add alt property to images.
 6. Need to replace dummy data on the index page.
-8. Make a purchase page.
-9. Make a page for transaction.
+9. Transaction should send data to buyer.
 10. Products need a comment section.
 
 ## Bugs
@@ -74,3 +73,7 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 12. User page currently assuming user has a shop.
 13. Sign up page has weird nav bug.
 14. Clicking submit without selecting an image should give error. Need this check for all image uploads.
+15. Product price is always a fixed number in cart.
+16. I should only be able to go to my cart if logged in.
+17. You should not be able to checkout if the cart is empty.
+18. Need to give a check that the information are inputed before submitting checkout form.

@@ -103,4 +103,13 @@ router.get('/cart', (req, res) => {
    res.render(path.join(__dirname +  '/../views/cart.ejs'));
 })
 
+router.get('/checkout', (req, res) => {
+   res.render(path.join(__dirname +  '/../views/checkout.ejs'));
+})
+
+router.post('/checkout', (req, res) => {
+   // This is not done yet.
+   res.redirect('/');
+})
+
 module.exports = router;
