@@ -2,13 +2,6 @@
     margin: 0;
     padding: 0;
 }
-.quantity-input{
-    width: 80%;
-    height: 30px;
-    padding: 10px;
-    font-size:25px;
-    font-weight: bold;
-}
 .main-body{
    display: flex;
    height: calc(100vh - 133px);
@@ -57,4 +50,11 @@
 }
 .product-nav-btn-container {
    margin-right: 10px;
+}
+.quantity {
+    width: 10em;
+    height: 2em;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
 }

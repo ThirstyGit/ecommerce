@@ -21,6 +21,7 @@
                <li><a href="/auth/register">Sign Up</a></li>
                <li><a href="/auth/login">Sign In</a></li>
             <%}%>
+            <li><a href="/cart">My Cart</a></li>
          </ul>
       </div>
    </nav>
@@ -35,12 +36,17 @@
                <div class="product-description-container">
                   <p class=""><%=product.description%></p>
                </div>
-               <input class="quantity-input" type="text" placeholder="Quantity">
-               <button class="btn product-btn">ADD TO CART</button>
+               <select class="quantity" name="quantity" id="quantity">
+                  <%for(let i = 1; i <= 10; ++i) {%>
+                     <option value="<%=i%>"><%=i%></option>
+                  <%}%>
+               </select>
+               <button id="add-to-cart" value="<%=product.name%>" class="btn product-btn">ADD TO CART</button>
             </div>
          </div>
       </div>
    </div>
    <script type="text/javascript" src="/js/script.js"></script>
+   <script type="text/javascript" src="/js/product.js"></script>
 </body>
 </html>

@@ -99,5 +99,8 @@ router.post('/changeprofile', loginRequired, upload.single('file'), (req, res) =
    })
 })
 
+router.get('/cart', (req, res) => {
+   res.render(path.join(__dirname +  '/../views/cart.ejs'));
+})
 
 module.exports = router;
