@@ -17,13 +17,13 @@
          <ul id="dropdown" class="dropdown">
             <%if(user) {%>
                <li id="add-product" class="new-shop-li">Add Product</li>
+               <li><a href="/cart">My Cart</a></li>
                <li id="change-shop-image" class="new-shop-li">Change Shop Image</li>
                <li><a href="/auth/logout">Sign Out</a></li>
             <%} else {%>
                <li><a href="/auth/register">Sign Up</a></li>
                <li><a href="/auth/login">Sign In</a></li>
             <%}%>
-            <li><a href="/cart">My Cart</a></li>
          </ul>
       </div>
    </nav>

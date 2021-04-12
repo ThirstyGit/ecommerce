@@ -16,12 +16,12 @@
          <ul id="dropdown" class="dropdown">
             <%if(user) {%>
                <li><a href="/shop/<%=products[0].shops_id%>">Shop</a></li>
+            <li><a href="/cart">My Cart</a></li>
                <li><a href="/auth/logout">Sign Out</a></li>
             <%} else {%>
                <li><a href="/auth/register">Sign Up</a></li>
                <li><a href="/auth/login">Sign In</a></li>
             <%}%>
-            <li><a href="/cart">My Cart</a></li>
          </ul>
       </div>
    </nav>
