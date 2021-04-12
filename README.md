@@ -78,3 +78,4 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 16. I should only be able to go to my cart if logged in.
 17. You should not be able to checkout if the cart is empty.
 18. Need to give a check that the information are inputed before submitting checkout form.
+19. Unable to check products without any comments.
