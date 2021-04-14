@@ -9,6 +9,7 @@ const routes = require('./routes/routes.js');
 const authRoutes = require('./routes/auth.js');
 const shopRoutes = require('./routes/shop.js');
 const productRoutes = require('./routes/product.js');
+const data = require('./routes/data.js');
 // Middlewares.
 const authenticate = require('./middlewares/verify.js').authenticate;
 
@@ -40,6 +41,7 @@ app.use('/', routes);
 app.use('/auth', authRoutes);
 app.use('/shop', shopRoutes);
 app.use('/product', productRoutes);
+app.use('/data', data);
 
 // Starting the server.
 const port = process.env.PORT || 3000;

@@ -54,10 +54,12 @@
       <%}%>
       <div class="comment-container" id="comment-container">
          <%products.forEach(product => {%>
-            <div class="comment">
-               <p class="comment-info"><%=product.username%> <span class="comment-time"><%=product.commentTime.toDateString()%> <%=product.commentTime.getHours()%>:<%=product.commentTime.getMinutes()%></span></p>
-               <p class="comment-content"><%=product.commentContent%></p>
-            </div>
+            <%if(product.username !== null) {%>
+               <div class="comment">
+                  <p class="comment-info"><%=product.username%> <span class="comment-time"><%=product.commentTime.toDateString()%> <%=product.commentTime.getHours()%>:<%=product.commentTime.getMinutes()%></span></p>
+                  <p class="comment-content"><%=product.commentContent%></p>
+               </div>
+            <%}%>
          <%})%>
       </div>
    </div>

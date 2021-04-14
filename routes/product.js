@@ -15,9 +15,9 @@ router.get('/:id', (req, res) => {
                p.description as productDescription, u.name as username,
                c.content as commentContent, c.time as commentTime
                FROM products as p
-               JOIN comments as c
+               LEFT JOIN comments as c
                ON p.id = c.products_id
-               JOIN users as u
+               LEFT JOIN users as u
                ON c.users_id = u.id
                WHERE p.id = ${db.escape(req.params.id)}
                `;

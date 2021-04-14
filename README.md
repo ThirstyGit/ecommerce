@@ -61,12 +61,11 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 11. Need the ability to change product image.
 12. Need to add admin capabilites.
 13. Need to add search capability.
+14. Ability to change a products image.
 
 ## Bugs
 1. Main page side bars do not work when there is not enough shops.
 2. Side divs need to be better sized and responsive in main page.
-3. Need to add a check so that there are not 2 shops with the same name.
-4. Need to make sure only images are uploaded when uploading a product image.
 7. Should make sure non shop ids are redirected.
 8. shop page height needs to be fixed.
 10. Can't go back to shop page from product page when loged out.
@@ -78,4 +77,4 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 16. I should only be able to go to my cart if logged in.
 17. You should not be able to checkout if the cart is empty.
 18. Need to give a check that the information are inputed before submitting checkout form.
-19. Unable to check products without any comments.
+19. ~~Unable to check products without any comments.~~
