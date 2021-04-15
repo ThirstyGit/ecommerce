@@ -112,4 +112,12 @@ router.post('/checkout', (req, res) => {
    res.redirect('/');
 })
 
+router.get('/search/:name', (req, res) => {
+   productName = `%${db.escape(req.params.name).slice(1, req.params.name.length + 1)}%`;
+   const sql = `SELECT * FROM products WHERE name LIKE '${productName}'`;
+   db.query(sql, (err, products) => {
+      res.render(path.join(__dirname +  '/../views/search.ejs'), {products});
+   })
+})
+
 module.exports = router;

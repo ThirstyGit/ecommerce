@@ -20,5 +20,13 @@ router.get('/shopexist/:name', (req, res) => {
    })
 })
 
+router.get('/product/:name', (req, res) => {
+   productName = `%${db.escape(req.params.name).slice(1, req.params.name.length + 1)}%`;
+   const sql = `SELECT * FROM products WHERE name LIKE '${productName}'`;
+   db.query(sql, (err, result) => {
+      res.json(result);
+   })
+})
+
 
 module.exports = router;

@@ -1,20 +1,9 @@
-*{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;  
-}
 .main-body{
    display: flex;
    height: calc(100vh - 133px);
    justify-content: center;
    align-items: center;
    min-height: 800px;
-}
-.header{
-   display: grid;
-   grid-template-columns: auto 250px;
-   background-color: rgb(35, 38, 44);
-   transition: all 0.3s ease 0s;
 }
 .div {
    transition-property: width;

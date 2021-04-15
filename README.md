@@ -62,6 +62,7 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 12. Need to add admin capabilites.
 13. Need to add search capability.
 14. Ability to change a products image.
+15. Need the ability to add rating to products.
 
 ## Bugs
 1. Main page side bars do not work when there is not enough shops.
@@ -77,4 +78,4 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 16. I should only be able to go to my cart if logged in.
 17. You should not be able to checkout if the cart is empty.
 18. Need to give a check that the information are inputed before submitting checkout form.
-19. ~~Unable to check products without any comments.~~
+20. Need to redo CSS with box-sizing.
