@@ -1,9 +1,13 @@
 const addProduct = document.querySelector('#add-product');
-const changeShopImage = document.querySelector('#change-shop-image');
+const changeShopImage = document.querySelector('#update-shop-info');
 
-addProduct.addEventListener('click', () => {
-   window.location.href += '/addproduct';
-})
-changeShopImage.addEventListener('click', () => {
-   window.location.href += '/changeimage';
-})
+if(addProduct) {
+   addProduct.addEventListener('click', () => {
+      window.location.href += '/addproduct';
+   })
+}
+if(changeShopImage) {
+   changeShopImage.addEventListener('click', () => {
+      window.location.href += '/updateshopinfo';
+   })
+}

@@ -62,11 +62,22 @@ router.post('/:id/addproduct', upload.single('file'), (req, res) => { //upload.s
    })
 })
 
-router.get('/:id/changeimage', (req, res) => {
-   res.render(path.join(__dirname +  '/../views/changeImage.ejs'), {shop_id: req.params.id});
+router.get('/:id/updateshopinfo', (req, res) => {
+   res.render(path.join(__dirname +  '/../views/updateShopInfo.ejs'), {shop_id: req.params.id});
+})
+
+router.post('/:id/updateinfo', (req, res) => {
+   const sql = `UPDATE shops SET name = ${db.escape(req.body.name)}, city = ${db.escape(req.body.city)}, area = ${db.escape(req.body.area)} WHERE id = ${db.escape(req.params.id)}`;
+   db.query(sql, (err, result) => {
+      if(err) {
+         console.error(err);
+      }
+   })
+   res.redirect(`/shop/${req.params.id}`);
 })
 
 router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.single comes from multer. Used to upload files.
+   console.log(req.body);
    const sql = `UPDATE shops SET image = ${db.escape(req.file.filename)} WHERE id = ${db.escape(req.params.id)}`;
    db.query(sql, (err, result) => {
       if(err) {

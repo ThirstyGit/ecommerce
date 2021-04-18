@@ -4,7 +4,6 @@ const mainButton = document.querySelector('#main-button');
 const previewImage = document.querySelector('#preview-image');
 const uploadContainer = document.querySelector('#upload-container');
 const cancelButton = document.querySelector('#cancel-button');
-
 // code to make the beautiful upload work.
 mainButton.addEventListener('click', () => {
    fileInput.click();
@@ -29,4 +28,5 @@ fileInput.addEventListener('change', function() {
    }
    previewImage.style.display = 'grid'
 })
+
 

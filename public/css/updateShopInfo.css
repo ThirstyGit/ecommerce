@@ -1,19 +1,31 @@
 .main-body {
    display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 20vh 0px;
+   flex-direction: column;
+}
+.info-heading {
+   text-align: center;
+   padding: 0.5em 0em;
 }
 /* Code for beautiful uploader starts here*/
+.form {
+   box-sizing: border-box;
+   width: 100%;
+   padding: 1rem 5%;
+   margin-bottom: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
 .upload-main-container {
-   width: 60vw;
+   width: 100%;
+   max-width: 60rem;
 }
 .upload-container {
    position: relative;
    width: calc(100% - 8px); /*Minus for border*/
    border-radius: 10px;
-   border: 4px dashed #bac1ca;
-   background: rgb(240, 238, 238);
+   border: 4px dashed hsl(214, 13%, 76%);
+   background: hsl(0, 6%, 94%);
    overflow: hidden;
    display: flex;
    justify-content: center;
@@ -41,41 +53,61 @@
    top: 15px;
    font-size: 25px;
    cursor: pointer;
-   color: rgb(241, 127, 92);
+   color: hsl(14, 84%, 65%);
    display: none;
 }
 .main-button {
    width: 100%;
    padding: 15px 0px;
    border: none;
-   background-color: #26cc6e;
-   border-radius: 20px;
+   background-color: hsl(146, 69%, 47%);
+   border-radius: 5px;
    color: white;
    font-size: 20px;
    cursor: pointer;
    outline: none;
 }
 .main-button:hover {
-   background-color: #40e286;
+   background-color: hsl(146, 74%, 57%);
 }
 .active {
-   border: 4px solid #bac1ca;
+   border: 4px solid hsl(214, 13%, 76%);
 }
 .upload-container.active .cancel-button {
    display: block;
 }
 .upload-container.active .cancel-button:hover {
    display: block;
-   color: #3a8ffe;
+   color: hsl(214, 99%, 61%);
 }
 .upload-text {
    font-size: 30px;
-   color: rgb(33, 33, 33);
+   color: hsl(0, 0%, 13%);
 }
 /* Code for beautiful uploader ends here*/
-.upload-btn {
+.update-btn {
    width: 100%;
-   border-radius: 20px;
+   max-width: 60rem;
+   border-radius: 5px;
    margin: 10px 0px;
    padding: 10px 0px;
+}
+/* Code for info update forms starts here. */
+.info-name {
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 60rem;
+   font-size: 1.25rem;
+   padding: .25rem;
+   margin-bottom: 1em;
+   outline: none;
+}
+.select {
+   margin-bottom: 1em;
+   width: 100%;
+   max-width: 60rem;
+   font-size: 1.25rem;
+   padding: 0.25rem;
+   outline: none;
+   cursor: pointer;
 }
