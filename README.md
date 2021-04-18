@@ -58,11 +58,9 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 4. Need to add alt property to images.
 6. Need to replace dummy data on the index page.
 9. Transaction should send data to buyer.
-11. Need the ability to change product image.
-12. Need to add admin capabilites.
-14. Ability to change a products image.
+12. Need to expand admin capabilites.
 15. Need the ability to add rating to products.
-16. General CSS upgrade. buttons need em. Search bar needs box sizing. Add favicon.
+16. General CSS upgrade. buttons need em. Search bar needs box sizing. Add favicon. Change logo.
 17. Properly restrict paths.
 
 ## Bugs

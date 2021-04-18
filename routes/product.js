@@ -12,7 +12,7 @@ router.get('/:id', (req, res) => {
       user = req.user;
    }
    // Get the product and all the comments of that product.
-   const sql = `SELECT p.name as productName, p.image, p.shops_id,
+   const sql = `SELECT p.name as productName, p.image, p.shops_id, p.id as product_id,
                p.description as productDescription, u.name as username,
                c.content as commentContent, c.time as commentTime
                FROM products as p
@@ -23,6 +23,7 @@ router.get('/:id', (req, res) => {
                WHERE p.id = ${db.escape(req.params.id)}
                `;
    db.query(sql, (err, result) => {
+      console.log(result);
       res.render(path.join(__dirname +  '/../views/product.ejs'), {products: result, user});
    });
 });
@@ -52,7 +53,6 @@ router.post('/:id/updateinfo', (req, res) => {
 })
 
 router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.single comes from multer. Used to upload files.
-   console.log(req.body);
    const sql = `UPDATE products SET image = ${db.escape(req.file.filename)} WHERE id = ${db.escape(req.params.id)}`;
    db.query(sql, (err, result) => {
       if(err) {
@@ -63,6 +63,16 @@ router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.
          res.redirect(`/product/${req.params.id}`);
       }
    })
+})
+
+router.get('/:id/delete', (req, res) => {
+   const sql = `DELETE FROM products WHERE id = ${db.escape(req.params.id)}`;
+   db.query(sql, (err) => {
+      if(err) {
+         console.error(err);
+      }
+   })
+   res.redirect('/');
 })
 
 
