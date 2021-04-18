@@ -18,7 +18,7 @@ function addSuggestion(data) {
          const a = document.createElement('a');
          
          // Assigning values.
-         a.href = `/product/${data.id}`; //Need to change this.
+         a.href = `/product/${data.id}`;
          a.innerText = data.name;
          
          // Appending everything properly.

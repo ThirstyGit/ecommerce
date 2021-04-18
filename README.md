@@ -60,9 +60,9 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 9. Transaction should send data to buyer.
 11. Need the ability to change product image.
 12. Need to add admin capabilites.
-13. Need to add search capability.
 14. Ability to change a products image.
 15. Need the ability to add rating to products.
+16. General CSS upgrade. buttons need em. Search bar needs box sizing. Add favicon.
 
 ## Bugs
 1. Main page side bars do not work when there is not enough shops.

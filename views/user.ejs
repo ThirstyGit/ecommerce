@@ -21,6 +21,12 @@
          <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
          <ul id="dropdown" class="dropdown">
             <%if(user) {%>
+               <%if(user.type === 'admin') {%>
+                  <li><a href="/moderation/admin">Admin Panel</a></li>
+               <%}%>
+               <%if(user.type === 'moderator') {%>
+                  <li><a href="/moderation/admin">Moderation</a></li>
+               <%}%>
                <li><a href="/shop/create">New Shop</a></li>
                <li><a href="/cart">My Cart</a></li>
                <li><a href="/auth/logout">Sign Out</a></li>

@@ -28,5 +28,13 @@ router.get('/product/:name', (req, res) => {
    })
 })
 
+router.get('/user/:name', (req, res) => {
+   userName = `%${db.escape(req.params.name).slice(1, req.params.name.length + 1)}%`;
+   const sql = `SELECT * FROM users WHERE name LIKE '${userName}'`;
+   db.query(sql, (err, result) => {
+      res.json(result);
+   })
+})
+
 
 module.exports = router;

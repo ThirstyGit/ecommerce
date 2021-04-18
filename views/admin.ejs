@@ -4,9 +4,9 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>E-commerce Solution </title>
    <link rel="stylesheet" type="text/css" href="/css/style.css">
-   <link rel="stylesheet" type="text/css" href="/css/index.css">
+   <link rel="stylesheet" type="text/css" href="/css/admin.css">
+   <title>Admin Panel</title>
 </head>
 <body>
    <nav class="nav">
@@ -21,12 +21,6 @@
          <ul id="dropdown" class="dropdown">
             <%if(user) {%>
                <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
-               <%if(user.type === 'admin') {%>
-                  <li><a href="/moderation/admin">Admin Panel</a></li>
-               <%}%>
-               <%if(user.type === 'moderator') {%>
-                  <li><a href="/moderation/admin">Moderation</a></li>
-               <%}%>
                <li><a href="/shop/create">New Shop</a></li>
                <li><a href="/cart">My Cart</a></li>
                <li><a href="/auth/logout">Sign Out</a></li>
@@ -38,34 +32,17 @@
       </div>
    </nav>
    <div class="main-body">
-      <div class="sidebar">
-         <p class="recent-order-title">Recent Shop List</p>
-         <div class="recent-order-lists">
-            <%recentShops.forEach(shop => {%>
-               <p class="recent-shop"><%=shop.name%></p>
-            <%})%>
+      <div class="user-control">
+         <div class="user-search-container">
+            <input type="text" class="user-search" id="user-search">
+            <ul class="user-search-suggestions" id="user-search-suggestions">
+            </ul>
          </div>
-      </div>
-      <div class="shop-list">
-         <%shops.forEach(shop => {%>
-            <a href="/shop/<%=shop.id%>">
-               <div class="shop">
-                  <img src="/images/<%=shop.image%>" class="shop-image">
-                  <p class="shop-desc"><%=shop.name%></p>
-                  <p >Rating: <%=shop.rating%>/5</p>
-               </div>
-            </a>
-         <%})%>
-      </div>
-      <div class="sidebar">
-         <p class="recent-order-title">bookmarked Shops</p>
-         <div class="recent-order-lists">
-            <%bookmarkedShops.forEach(shop => {%>
-               <p class="bookmarked-shops"><%=shop.name%></p>
-            <%})%>
-         </div>
+         <ul class="user-result-container" id="user-result-container">
+         </ul>
       </div>
    </div>
    <script type="text/javascript" src="/js/script.js"></script>
+   <script type="text/javascript" src="/js/admin.js"></script>
 </body>
 </html>

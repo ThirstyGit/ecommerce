@@ -32,8 +32,18 @@ module.exports.loginRequired = (req, res, next) => {
 }
 
 // Making sure that the logged in user is an admin.
-module.exports.admin = (req, res, next) => {
+module.exports.isAdmin = (req, res, next) => {
    if(req.user && req.user.type === 'admin') {
+      next();
+   }
+   else {
+      res.redirect('/');
+   }
+}
+
+// Making sure that the logged in user is a moderator.
+module.exports.isModerator = (req, res, next) => {
+   if(req.user && req.user.type === 'moderator') {
       next();
    }
    else {

@@ -4,9 +4,8 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>E-commerce Solution </title>
    <link rel="stylesheet" type="text/css" href="/css/style.css">
-   <link rel="stylesheet" type="text/css" href="/css/index.css">
+   <title>Moderation</title>
 </head>
 <body>
    <nav class="nav">
@@ -37,35 +36,7 @@
          </ul>
       </div>
    </nav>
-   <div class="main-body">
-      <div class="sidebar">
-         <p class="recent-order-title">Recent Shop List</p>
-         <div class="recent-order-lists">
-            <%recentShops.forEach(shop => {%>
-               <p class="recent-shop"><%=shop.name%></p>
-            <%})%>
-         </div>
-      </div>
-      <div class="shop-list">
-         <%shops.forEach(shop => {%>
-            <a href="/shop/<%=shop.id%>">
-               <div class="shop">
-                  <img src="/images/<%=shop.image%>" class="shop-image">
-                  <p class="shop-desc"><%=shop.name%></p>
-                  <p >Rating: <%=shop.rating%>/5</p>
-               </div>
-            </a>
-         <%})%>
-      </div>
-      <div class="sidebar">
-         <p class="recent-order-title">bookmarked Shops</p>
-         <div class="recent-order-lists">
-            <%bookmarkedShops.forEach(shop => {%>
-               <p class="bookmarked-shops"><%=shop.name%></p>
-            <%})%>
-         </div>
-      </div>
-   </div>
+   <h1>Moderator Page</h1>
    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>
