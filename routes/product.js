@@ -3,6 +3,7 @@ const router = require('express').Router();
 const path = require('path');
 const db = require('../database/database.js');
 const {loginRequired} = require('../middlewares/verify.js');
+const upload = require('../database/upload.js');
 
 router.get('/:id', (req, res) => {
    // Check if there is a user.
@@ -35,5 +36,34 @@ router.post('/:id/createcomment', loginRequired, (req, res) => {
       }
    })
 })
+
+router.get('/:id/updateproductinfo', (req, res) => {
+   res.render(path.join(__dirname +  '/../views/updateProductInfo.ejs'), {product_id: req.params.id});
+})
+
+router.post('/:id/updateinfo', (req, res) => {
+   const sql = `UPDATE products SET name = ${db.escape(req.body.name)}, price = ${db.escape(req.body.price)}, description = ${db.escape(req.body.description)} WHERE id = ${db.escape(req.params.id)}`;
+   db.query(sql, (err, result) => {
+      if(err) {
+         console.error(err);
+      }
+   })
+   res.redirect(`/product/${req.params.id}`);
+})
+
+router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.single comes from multer. Used to upload files.
+   console.log(req.body);
+   const sql = `UPDATE products SET image = ${db.escape(req.file.filename)} WHERE id = ${db.escape(req.params.id)}`;
+   db.query(sql, (err, result) => {
+      if(err) {
+         res.redirect(`/product/${req.params.id}/changeimage`);
+         console.error(err)
+      }
+      else {
+         res.redirect(`/product/${req.params.id}`);
+      }
+   })
+})
+
 
 module.exports = router;

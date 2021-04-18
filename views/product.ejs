@@ -20,13 +20,14 @@
          <ul id="dropdown" class="dropdown">
             <%if(user) {%>
                <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
-               <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
                <%if(user.type === 'admin') {%>
                   <li><a href="/moderation/admin">Admin Panel</a></li>
                <%}%>
                <%if(user.type === 'moderator') {%>
                   <li><a href="/moderation/admin">Moderation</a></li>
                <%}%>
+               <!-- uses js to change page. -->
+               <li id="update-product-info" class="product-li">Update product</li>
                <li><a href="/shop/<%=products[0].shops_id%>">Shop</a></li>
                <li><a href="/cart">My Cart</a></li>
                <li><a href="/auth/logout">Sign Out</a></li>

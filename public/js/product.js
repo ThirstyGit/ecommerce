@@ -5,12 +5,13 @@ const commentBtn = document.querySelector('#comment-btn');
 const commentText = document.querySelector('#comment-text');
 const commentContainer = document.querySelector('#comment-container');
 const user = document.querySelector('#user');
+const updateProductInfo = document.querySelector('#update-product-info');
 
 // Extracting necessary data.
 const productId = window.location.href.split('/')[4];
 
 // Adding all the events.
-
+// Redirect events.
 addToCart.addEventListener('click', () => {
    // If there is an item, set it to previous item + new item.
    if(localStorage.getItem('cart') !== null) {
@@ -20,6 +21,8 @@ addToCart.addEventListener('click', () => {
       localStorage.setItem('cart', `${addToCart.value}:${qunatity.value}`);
    }
 });
+
+
 
 if(commentBtn) { //The button does not exists when user is not logged in.
    commentBtn.addEventListener('click', () => {
@@ -64,5 +67,11 @@ if(commentBtn) { //The button does not exists when user is not logged in.
          commentText.value = '';
       }
    })
+}
+
+if(updateProductInfo) {
+   updateProductInfo.addEventListener('click', (e) => {
+      window.location.href += '/updateproductinfo';
+   });
 }
 

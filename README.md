@@ -63,6 +63,7 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 14. Ability to change a products image.
 15. Need the ability to add rating to products.
 16. General CSS upgrade. buttons need em. Search bar needs box sizing. Add favicon.
+17. Properly restrict paths.
 
 ## Bugs
 1. Main page side bars do not work when there is not enough shops.
