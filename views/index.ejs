@@ -40,7 +40,7 @@
       </div>
    </nav>
    <div class="main-body">
-      <h1>Recent shops</h1>
+      <h1 class="heading">Recent shops</h1>
       <div class="card-container">
          <%shops.forEach(shop => {%>
             <a class="card" href="/shop/<%=shop.id%>">
@@ -50,7 +50,7 @@
             </a>
          <%})%>
       </div>
-      <h1>Recent products</h1>
+      <h1 class="heading">Recent products</h1>
       <div class="card-container">
          <%products.forEach(shop => {%>
             <a class="card" href="/product/<%=shop.id%>">

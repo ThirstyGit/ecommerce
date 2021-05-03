@@ -25,12 +25,15 @@
 }
 .card-name {
    font-size: 1.5rem;
+   font-weight: 600;
+   color: var(--dark-secondary);
    margin: 0.5rem;
 }
 .card-price {
    font-size: 1rem;
    margin: 0.5rem;
+   color: var(--dark-secondary);
 }
 .heading {
-   color: var(--green-primary);
+   color: var(--dark-secondary);
 }
