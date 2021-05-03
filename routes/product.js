@@ -23,7 +23,6 @@ router.get('/:id', (req, res) => {
                WHERE p.id = ${db.escape(req.params.id)}
                `;
    db.query(sql, (err, result) => {
-      console.log(result);
       res.render(path.join(__dirname +  '/../views/product.ejs'), {products: result, user});
    });
 });
@@ -66,13 +65,16 @@ router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.
 })
 
 router.get('/:id/delete', (req, res) => {
-   const sql = `DELETE FROM products WHERE id = ${db.escape(req.params.id)}`;
-   db.query(sql, (err) => {
-      if(err) {
-         console.error(err);
-      }
+   const sql = `DELETE FROM comments WHERE products_id = ${db.escape(req.params.id)}`;
+   db.query(sql, err => {
+      const sql = `DELETE FROM products WHERE id = ${db.escape(req.params.id)}`;
+      db.query(sql, (err) => {
+         if(err) {
+            console.error(err);
+         }
+         res.redirect('/');
+      })
    })
-   res.redirect('/');
 })
 
 

@@ -77,7 +77,6 @@ router.post('/:id/updateinfo', (req, res) => {
 })
 
 router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.single comes from multer. Used to upload files.
-   console.log(req.body);
    const sql = `UPDATE shops SET image = ${db.escape(req.file.filename)} WHERE id = ${db.escape(req.params.id)}`;
    db.query(sql, (err, result) => {
       if(err) {
@@ -90,14 +89,42 @@ router.post('/:id/changeimage', upload.single('file'), (req, res) => { //upload.
    })
 })
 
-router.get('/:id/delete', (req, res) => {
-   const sql = `DELETE FROM shops WHERE id = ${db.escape(req.params.id)}`;
-   db.query(sql, (err) => {
+router.get('/:id/delete', async (req, res) => {
+   let sql = `SELECT * FROM products WHERE shops_id = ${db.escape(req.params.id)}`;
+   await db.query(sql, async (err, result) => {
       if(err) {
          console.error(err);
       }
+      else if(result.length) {
+         sql = `DELETE FROM comments WHERE`;
+         result.forEach((res, index) => {
+            if(index) {
+               sql += ` OR products_id = ${db.escape(res.id)}`;
+            }
+            else {
+               sql += ` products_id = ${db.escape(res.id)}`;
+            }
+         })
+         await db.query(sql, (err) => {
+            if(err) {
+               console.error(err);
+            }
+         })
+      }
    })
-   res.redirect('/');
+   sql = `DELETE FROM products WHERE shops_id = ${db.escape(req.params.id)}`;
+   await db.query(sql, (err, result) => {
+      if(err) {
+         console.error(err)
+      }
+   })
+   sql = `DELETE FROM shops WHERE id = ${db.escape(req.params.id)}`;
+   await db.query(sql, (err) => {
+      if(err) {
+         console.error(err);
+      }
+      res.redirect('/');
+   })
 })
 
 
