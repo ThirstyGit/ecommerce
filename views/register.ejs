@@ -10,33 +10,18 @@
    <title>Register</title>
 </head>
 <body>
-   <nav class="nav">
-      <a href="/" class="main-header">Ecommerce solution</a>
-      <div class="search-bar-container">
-         <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
-         <ul class="search-suggestions" id="search-suggestions">
-         </ul>
-      </div>
-      <div class="dropdown-container">
-         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
-         <ul id="dropdown" class="dropdown">
-            <li><a href="/auth/login">Sign In</a></li>
-         </ul>
-      </div>
-   </nav>
    <div class="main-body">
       <div class="form-container">
          <form class="form" action="/auth/register" method="POST">
             <h1 class="header">Sign Up</h1>
-            <p>Must be at least 4 characters.</p>
             <input class="form-input" id ="name" name="name" type="text" placeholder="Name">
             <input class="form-input" id ="email" name="email" type="text" placeholder="Email">
-            <p>* Must contain at least 8 character with Uppercase, lowercase and numbers</p>
             <input class="form-input" id ="password" name="password" type="password" placeholder="Password">
             <input class="form-input" id ="password-confirm" type="password" placeholder="Confirm Password">
             <input class="form-input" id ="phone" name="phone" type="text" placeholder="Phone Number">
             <input class="form-input" id ="date" name="date" type="date">
-            <button type="button" class="btn" id="register">Sign Up</button>
+            <button type="button" class="btn form-btn" id="register">Sign Up</button>
+            <span>Already have an account? <a class="form-redirect" href="/auth/login">Sign In</a></span>
          </form>
       </div>
    </div>

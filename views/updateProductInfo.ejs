@@ -10,7 +10,9 @@
 </head>
 <body>
    <nav class="nav">
-      <a href="/" class="main-header">Ecommerce solution</a>
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
       <div class="search-bar-container">
          <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
          <ul class="search-suggestions" id="search-suggestions">
@@ -37,7 +39,7 @@
    </nav>
    <div class="main-body">
       <h1 class="info-heading">Change Product Image</h1>
-      <form id="image-form" class="form" action="changeimage" method="POST" enctype="multipart/form-data">
+      <form id="image-form" class="update-form" action="changeimage" method="POST" enctype="multipart/form-data">
          <div class="upload-main-container">
             <div class="upload-container" id="upload-container">
                <div class="image-container">
@@ -47,7 +49,7 @@
                   <div class="upload-text">Upload an Image.</div>
                </div>
                <div class="cancel-button" id="cancel-button">
-                  <i class="fa fa-times"></i>
+                  X
                </div>
             </div>
             <div class="file-container">
@@ -58,7 +60,7 @@
          <button class="btn update-btn" id="image-update-btn" type="submit">UPDATE</button>
       </form>
       <h1 class="info-heading">Change Product Info</h1>
-      <form id="info-form" class="form" method="POST" action="updateinfo">
+      <form id="info-form" class="update-form" method="POST" action="updateinfo">
          <input class="info-name" name="name" type="text" placeholder="New name">
          <input class="info-name" name="price" type="text" placeholder="New price">
          <textarea class="info-name description" name="description" placeholder="New description..."></textarea>

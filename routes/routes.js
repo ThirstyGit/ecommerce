@@ -8,32 +8,24 @@ const bcrypt = require('bcrypt');
 const {loginRequired} = require('../middlewares/verify.js');
 const upload = require('../database/upload.js');
 
-// Dummy data. Will be replaced with a proper database.
-const recentShops = [
-   {name: "Amader shop"},
-   {name: "Super Malt"},
-   {name: "Great shop"},
-   {name: "Graphics world"},
-   // {name: ""},
-]
-
-const bookmarkedShops = [
-   {name: "Bahi Bhai shop"},
-   {name: "Amader shop"},
-   {name: "Our Shop BD"},
-   // {name: ""},
-]
-
-
 // Basic routing.
 router.get('/', (req, res) => {
-   const sql = `SELECT * FROM shops`;
+   const sql = `SELECT *
+                  FROM shops
+                  ORDER BY id desc
+                  LIMIT 8`;
    db.query(sql, (err, shops) => {
       if(err) {
          shops = {};
          console.error(err);
       }
-      res.render(path.join(__dirname +  '/../views/index.ejs'), {shops, recentShops, bookmarkedShops, user: req.user});
+      const sql = `SELECT *
+                  FROM products
+                  ORDER BY id desc
+                  LIMIT 8`;
+      db.query(sql, (err, products) => {
+         res.render(path.join(__dirname +  '/../views/index.ejs'), {shops, products, user: req.user});
+      })
    })
 });
 

@@ -93,11 +93,11 @@
 .clear-btn {
    font-size: 20px;
    padding: 0.5em 1em;
-   background-color: rgb(255, 85, 85);
+   background-color: var(--orange-primary);
    border-radius: 0.2em;
 }
 .clear-btn:hover {
-   background-color: rgb(255, 65, 65);
+   background-color: var(--orange-secondary);
 }
 .delete-btn {
    width: 10%;
@@ -106,5 +106,5 @@
    border: none;
    outline: none;
    cursor: pointer;
-   color: rgb(255, 85, 85);
+   color: var(--orange-primary);
 }

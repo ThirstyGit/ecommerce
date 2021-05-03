@@ -10,7 +10,9 @@
 </head>
 <body>
    <nav class="nav">
-      <a href="/" class="main-header">Ecommerce solution</a>
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
       <div class="search-bar-container">
          <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
          <ul class="search-suggestions" id="search-suggestions">
@@ -38,32 +40,25 @@
       </div>
    </nav>
    <div class="main-body">
-      <div class="sidebar">
-         <p class="recent-order-title">Recent Shop List</p>
-         <div class="recent-order-lists">
-            <%recentShops.forEach(shop => {%>
-               <p class="recent-shop"><%=shop.name%></p>
-            <%})%>
-         </div>
-      </div>
-      <div class="shop-list">
+      <h1>Recent shops</h1>
+      <div class="card-container">
          <%shops.forEach(shop => {%>
-            <a href="/shop/<%=shop.id%>">
-               <div class="shop">
-                  <img src="/images/<%=shop.image%>" class="shop-image">
-                  <p class="shop-desc"><%=shop.name%></p>
-                  <p >Rating: <%=shop.rating%>/5</p>
-               </div>
+            <a class="card" href="/shop/<%=shop.id%>">
+               <img src="/images/<%=shop.image%>" class="card-image">
+               <p class="card-name"><%=shop.name%></p>
+               <p class="card-price">Rating: <%=shop.rating%>/5</p>
             </a>
          <%})%>
       </div>
-      <div class="sidebar">
-         <p class="recent-order-title">bookmarked Shops</p>
-         <div class="recent-order-lists">
-            <%bookmarkedShops.forEach(shop => {%>
-               <p class="bookmarked-shops"><%=shop.name%></p>
-            <%})%>
-         </div>
+      <h1>Recent products</h1>
+      <div class="card-container">
+         <%products.forEach(shop => {%>
+            <a class="card" href="/product/<%=shop.id%>">
+               <img src="/images/<%=shop.image%>" class="card-image">
+               <p class="card-name"><%=shop.name%></p>
+               <p class="card-price">Rating: <%=shop.rating%>/5</p>
+            </a>
+         <%})%>
       </div>
    </div>
    <script type="text/javascript" src="/js/script.js"></script>

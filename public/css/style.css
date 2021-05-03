@@ -1,36 +1,95 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
+
+/* Variable declarations */
+:root {
+   /* Colors */
+   --green-primary: hsl(146, 69%, 47%);
+   --green-secondary: hsl(146, 74%, 57%);
+   --dark-primary: hsl(220, 11%, 15%);
+   --dark-secondary: hsl(0, 0%, 29%);
+   --white-primary: hsl(12, 33%, 94%);
+   --gray-primary: hsl(214, 13%, 76%);
+   --orange-primary: hsl(0, 100%, 63%);
+   --orange-secondary: hsl(0, 100%, 67%);
+   /* Values */
+   --border-radius-primary: 5px;
+   --border-radius-extreme: 10px;
+}
 /* Basic styling for all pages. */
 * {
    margin: 0px;
    padding: 0px;
-   font-family: Ubuntu, sans-serif;
+   font-family: Roboto, sans-serif;
 }
 a {
    text-decoration: none;
    color: black;
 }
 body {
-   background-color: rgb(245, 237, 235);
-   /* min-width: 800px; */
+   background-color: var(--white-primary);
 }
 /* Basic classes for all pages. */
 .btn {
-   margin: 5px;
-   padding: 10px;
-   font-size: 25px;
+   margin: 0.5rem;
+   padding: 0.75rem;
+   font-size: 1.5rem;
    border: 0px;
    outline: none;
-   background-color: #26cc6e;
+   background-color: var(--green-primary);
    cursor: pointer;
+   border-radius: var(--border-radius-primary);
 }
 .btn:hover{
-   background-color: #40e286;
+   background-color: var(--green-secondary);
 }
 .hidden {
    display: none;
 }
+.form-container{
+   background-color: hsl(152, 90%, 81%);
+   width: 400px;
+   padding: 30px 0px;
+   box-shadow: 0px 0px 30px -10px black;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.form{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.form > * {
+   margin-bottom: 0.5em;
+}
+.form-header {
+   color: var(--dark-secondary);
+   font-size: 50px;
+}
+.form-input{
+   box-sizing: border-box;
+   width: 80%;
+   padding: 0.25em;
+   outline: none;
+   font-size: 1.5rem;
+}
+.form-select {
+   width: 80%;
+   padding: 0.25em;
+   font-size: 1.5rem;
+}
+.form-btn {
+   box-sizing: border-box;
+   width: 80%;
+   text-align: center;
+}
+.form-redirect {
+   color: var(--orange-primary);
+}
 /* For the nav bar that all pages are using. */
 .nav {
-   background-color: rgb(35, 38, 44);
+   background-color:var(--dark-primary);
    display: flex;
    justify-content: space-between;
    flex-wrap: nowrap;
@@ -38,13 +97,15 @@ body {
 }
 .main-header {
    color: white;
-   font-size: 20px;
-   width: 7.5rem;
+   font-size: 1.25rem;
+   text-align: center;
+   width: 5.5rem;
 }
 .search-bar-container {
-   width: calc(100% - 12.5rem);
+   width: calc(100% - 10.5rem);
    max-width: 800px;
    position: relative;
+   z-index: 1;
 }
 .search-bar{
    outline:none;
@@ -64,12 +125,12 @@ body {
 }
 .search-suggestions li {
    list-style: none;
-   background: #26cc6e;
+   background: var(--green-primary);
    cursor: pointer;
    font-size: 1.25rem;
 }
 .search-suggestions li:hover {
-   background: #40e286;
+   background: var(--green-secondary);
 }
 .search-suggestions li a {
    display: inline-block;
@@ -80,6 +141,7 @@ body {
 .dropdown-container {
    width: 2.5rem;
    position: relative;
+   z-index: 1;
 }
 .dropdown {
    color: rebeccapurple;

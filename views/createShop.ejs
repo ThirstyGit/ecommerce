@@ -11,7 +11,9 @@
 </head>
 <body>
    <nav class="nav">
-      <a href="/" class="main-header">Ecommerce solution</a>
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
       <div class="search-bar-container">
          <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
          <ul class="search-suggestions" id="search-suggestions">
@@ -39,9 +41,9 @@
    <div class="main-body">
       <div class="form-container">
          <form class="form" action="/shop/create" method="POST">
-               <h1 class="header">Sign Up</h1>
+               <h1 class="form-header">New Shop</h1>
                <input class="form-input" id ="name" name="name" type="text" placeholder="Name">
-               <select name="city" id="city">
+               <select class="form-select" name="city" id="city">
                   <option value="dhaka">Dhaka</option>
                   <option value="chittagong">Chittagong</option>
                   <option value="khulna">Khulna</option>
@@ -54,13 +56,13 @@
                   <option value="comilla">Comilla</option>
                   <option value="narayanganj">Narayanganj</option>
                </select>
-               <select name="area" id="area">
+               <select class="form-select" name="area" id="area">
                   <option value="dhanmondi">Dhanmondi</option>
                   <option value="mirpur">Mirpur</option>
                   <option value="banani">Banani</option>
                   <option value="gulshan">Gulshan</option>
                </select>
-               <button type="submit" class="btn">Create Shop</button>
+               <button type="submit" class="btn form-btn">Create Shop</button>
          </form>
       </div>
    </div>

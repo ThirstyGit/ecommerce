@@ -1,14 +1,6 @@
 label {
    font-size: 30px;
 }
-form {
-   display: flex;
-   flex-direction: column;
-   padding: 0% 10%;
-}
-.form-input {
-
-}
 .main-body {
    display: flex;
 }
@@ -27,11 +19,11 @@ form {
    padding: 20px 0px;
    border: 0px;
    outline: none;
-   background-color: #26cc6e;
+   background-color: var(--green-primary);
    cursor: pointer;
 }
 .nav-button:hover{
-   background-color: #40e286;
+   background-color: var(--green-secondary);
 }
 .user-container {
    width: 50%;
@@ -39,24 +31,6 @@ form {
 }
 .user-info {
    margin-bottom: 20px;
-}
-.form-input {
-   font-size: 20px;
-   padding: .25em 0.5em;
-   margin-bottom: 15px;
-   outline: none;
-}
-.form-input-button {
-   font-size: 25px;
-   padding: .5em 0.5em;
-   outline: none;
-   border: none;
-   cursor: pointer;
-   border-radius: 5px;
-   background-color: #26cc6e;
-}
-.form-input-button:hover {
-   background-color: #40e286;
 }
 .form-date {
    cursor: pointer;

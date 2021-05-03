@@ -54,14 +54,13 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 ```
 
 ## Todo
-1. We need better fonts.
-4. Need to add alt property to images.
-6. Need to replace dummy data on the index page.
+1. Need to add alt property to images.
 9. Transaction should send data to buyer.
 12. Need to expand admin capabilites.
 15. Need the ability to add rating to products.
-16. General CSS upgrade. buttons need em. Search bar needs box sizing. Add favicon. Change logo.
 17. Properly restrict paths.
+18. Add oAuth 2.
+19. Shop boosting with cards showing prices.
 
 ## Bugs
 1. Main page side bars do not work when there is not enough shops.
@@ -78,3 +77,4 @@ Use the following HTML tag for linking Javascript files to your HTML/ejs. Replac
 17. You should not be able to checkout if the cart is empty.
 18. Need to give a check that the information are inputed before submitting checkout form.
 20. Need to redo CSS with box-sizing.
+21. If the user is logged in, should not be able to go to login page.

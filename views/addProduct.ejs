@@ -11,7 +11,9 @@
 </head>
 <body>
    <nav class="nav">
-      <a href="/" class="main-header">Ecommerce solution</a>
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
       <div class="search-bar-container">
          <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
          <ul class="search-suggestions" id="search-suggestions">
@@ -38,9 +40,9 @@
       </div>
    </nav>
    <div class="main-body">
-      <div class="form-container">
+      <div class="form-container upload-form-container">
          <form class="form" id="form" method="POST" enctype="multipart/form-data">
-            <h1 class="header">New Product</h1>
+            <h1 class="form-header">New Product</h1>
             <input class="form-input" type="text" id ="name" name="name" placeholder="Name">
             <input class="form-input" type="text" id ="price" name="price" placeholder="Price">
             <div class="upload-main-container">
@@ -52,7 +54,7 @@
                      <div class="upload-text">Upload an Image.</div>
                   </div>
                   <div class="cancel-button" id="cancel-button">
-                     <i class="fa fa-times"></i>
+                     X
                   </div>
                </div>
                <div class="file-container">
@@ -61,7 +63,7 @@
                </div>
             </div>
             <textarea name="description" class="description" placeholder="Description"></textarea>
-            <button type="button" class="btn" id="new-shop">Add Product</button>
+            <button type="button" class="btn form-btn" id="new-shop">Add Product</button>
          </form>
       </div>
    </div>

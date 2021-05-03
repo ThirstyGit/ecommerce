@@ -11,7 +11,9 @@
 </head>
 <body>
    <nav class="nav">
-      <a href="/" class="main-header">Ecommerce solution</a>
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
       <div class="search-bar-container">
          <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
          <ul class="search-suggestions" id="search-suggestions">
@@ -74,7 +76,7 @@
                <input class="form-input" type="text" name="phone" id="phone" value="<%=user.phone%>">
                <label>Date Of Birth: </label>
                <input class="form-input form-date" type="date" name="dob" id="dob" value="<%=user.DOB.toJSON().slice(0,10)%>">
-               <button class="form-input-button">Change Information</button>
+               <button class="btn">Change Information</button>
             </form>
          </div>
          <div class="info-container hidden" id="password-change-container">
@@ -83,7 +85,7 @@
                <input class="form-input" type="password" name="password" id="password">
                <label>Password Confirm: </label>
                <input class="form-input" type="password" name="confirm-password" id="confirm-password">
-               <button class="form-input-button">Change Password</button>
+               <button class="btn">Change Password</button>
             </form>
          </div>
       </div>

@@ -1,51 +1,21 @@
-p {
-   margin: 0px;
-   width: 80%;
-   color: rgb(131, 102, 64);
-}
 .main-body{
    display: flex;
-   height: calc(100vh - 133px);
-   justify-content: center;
-   align-items: center;
-   min-height: 800px;
-}
-.form-container{
-   background-color: rgb(161, 250, 208);
-   width: 600px;
-   padding: 30px 0px;
-   box-shadow: 0px 0px 20px black;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-}
-.form{
-   display: flex;
    flex-direction: column;
    align-items: center;
 }
-.form > * {
-   margin-bottom: 10px;
-}
-.form-input{
-   width: calc(80% - 4px); /*Minus for border*/
-   height: 40px;
-   outline: none;
-   font-size: 25px;
-}
-
-.header {
-   color: rgb(54, 73, 64);
-   font-size: 40px;
-}
-
 .description {
+   box-sizing: border-box;
    outline: none;
    resize: none;
    font-size: 20px;
    width: calc(80% - 2px); /*Minus for border*/
    height: 200px;
    padding: 5px;
+}
+.upload-form-container {
+   width: 80%;
+   max-width: 40rem;
+   margin: 2rem 0;
 }
 /* Code for beautiful uploader starts here*/
 .upload-main-container {
@@ -55,9 +25,9 @@ p {
    position: relative;
    height: 200px;
    width: calc(100% - 8px); /*Minus for border*/
-   border-radius: 10px;
-   border: 4px dashed #bac1ca;
-   background: rgb(240, 238, 238);
+   border-radius: var(--border-radius-primary);
+   border: 4px dashed var(--gray-primary);
+   background: var(--white-primary);
    overflow: hidden;
    display: flex;
    justify-content: center;
@@ -82,37 +52,36 @@ p {
    position: absolute;
    right: 15px;
    top: 15px;
-   font-size: 25px;
+   font-size: 2rem;
    cursor: pointer;
-   color: rgb(241, 127, 92);
+   color: var(--orange-primary);
    display: none;
 }
 .main-button {
    width: 100%;
    padding: 15px 0px;
    border: none;
-   background-color: #26cc6e;
-   border-radius: 20px;
+   background-color: var(--green-primary);
+   border-radius: var(--border-radius-primary);
    color: white;
    font-size: 20px;
    cursor: pointer;
    outline: none;
 }
 .main-button:hover {
-   background-color: #40e286;
+   background-color: var(--green-secondary);
 }
 .active {
-   border: 4px solid #bac1ca;
+   border: 4px solid var(--gray-primary);
 }
 .upload-container.active .cancel-button {
    display: block;
 }
 .upload-container.active .cancel-button:hover {
-   display: block;
-   color: #3a8ffe;
+   color: var(--orange-secondary);
 }
 .upload-text {
    font-size: 30px;
-   color: rgb(33, 33, 33);
+   color: var(--dark-primary);
 }
 /* Code for beautiful uploader ends here*/
