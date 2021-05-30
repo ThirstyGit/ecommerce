@@ -24,14 +24,17 @@
                <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
                <%if(user.type === 'admin') {%>
                   <li><a href="/moderation/admin">Admin Panel</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
                <%}%>
                <%if(user.type === 'moderator') {%>
-                  <li><a href="/moderation/admin">Moderation</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
                <%}%>
                <!-- uses js to change page. -->
-               <li id="update-product-info" class="product-li">Update product</li>
-               <li><a href="/shop/<%=products[0].shops_id%>">Shop</a></li>
-               <li><a href="/product/<%=products[0].product_id%>/delete">Delete product</a></li>
+               <% if(user.isOwner) { %>
+                  <li id="update-product-info" class="product-li">Update product</li>
+                  <li><a href="/shop/<%=products[0].shops_id%>">Shop</a></li>
+                  <li><a href="/product/<%=products[0].product_id%>/delete">Delete product</a></li>
+               <% } %>
                <li><a href="/cart">My Cart</a></li>
                <li><a href="/auth/logout">Sign Out</a></li>
             <%} else {%>
@@ -50,14 +53,31 @@
             </div>
             <div class="product-options">
                <div class="product-description-container">
-                  <p class=""><%=products[0].productDescription%></p>
+                  <p class="product-description"><%=products[0].productDescription%></p>
+                  <p class="product-price" id="product-price">Tk. <%=products[0].price%></p>
                </div>
-               <select class="quantity" name="quantity" id="quantity">
-                  <%for(let i = 1; i <= 10; ++i) {%>
-                     <option value="<%=i%>"><%=i%></option>
-                  <%}%>
-               </select>
-               <button id="add-to-cart" value="<%=products[0].productName%>" class="btn product-btn">ADD TO CART</button>
+               <% if (user) { %>
+                  <% if(user.isOwner) { %>
+                     <% if(products[0].verify === 'true') { %>
+                        <button class="btn product-btn" >VERIFIED</button>
+                     <% } else if(products[0].verify === 'false') { %>
+                        <button class="btn product-btn" id="verify-btn">VERIFY</button>
+                     <% } else if(products[0].verify === 'waiting') { %>
+                        <button class="btn product-btn waiting-btn" >WAITING</button>
+                     <% } else { %>
+                        <button class="btn product-btn">ERROR</button>
+                     <% } %>
+                  <% } else { %>
+                     <select class="quantity" name="quantity" id="quantity">
+                        <% for(let i = 1; i <= 10; ++i) {%>
+                           <option value="<%=i%>"><%=i%></option>
+                        <% } %>
+                     </select>
+                     <button id="add-to-cart" value="<%=products[0].productName%>" class="btn product-btn">ADD TO CART</button>
+                  <% } %>
+               <% } else { %>
+                  <a href="/auth/login" class="btn login-btn">Login To Buy</a>
+               <% } %>
             </div>
          </div>
       </div>

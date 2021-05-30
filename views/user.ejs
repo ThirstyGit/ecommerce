@@ -25,9 +25,10 @@
             <%if(user) {%>
                <%if(user.type === 'admin') {%>
                   <li><a href="/moderation/admin">Admin Panel</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
                <%}%>
                <%if(user.type === 'moderator') {%>
-                  <li><a href="/moderation/admin">Moderation</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
                <%}%>
                <li><a href="/shop/create">New Shop</a></li>
                <li><a href="/cart">My Cart</a></li>

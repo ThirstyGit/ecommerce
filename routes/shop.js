@@ -1,7 +1,7 @@
 // urls prefixed with /shop
 const path = require('path');
 const db = require('../database/database.js');
-const {loginRequired} = require('../middlewares/verify.js');
+const {loginRequired, shopOwner} = require('../middlewares/verify.js');
 const upload = require('../database/upload.js');
 
 // module exports.
@@ -26,7 +26,7 @@ router.post('/create', loginRequired, (req, res) => {
    })
 })
 
-router.get('/:id', (req, res) => {
+router.get('/:id', shopOwner, (req, res) => {
    const sql = `SELECT * FROM shops WHERE id = ${db.escape(req.params.id)}`; //Information about the specific shop.
    db.query(sql, (err, shops) => {
       if(err) {
@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
             console.error(err);
             products = {}
          }
-         res.render(path.join(__dirname +  '/../views/shop.ejs'), {shop: shops[0], products});
+         res.render(path.join(__dirname +  '/../views/shop.ejs'), {shop: shops[0], products, user: req.user});
       })
    })
 });

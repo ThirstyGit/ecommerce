@@ -3,6 +3,7 @@
 *.png
 *.jpeg
 *.gif
+*.webp
 adminCodes.js
 todo.md
 *.docx

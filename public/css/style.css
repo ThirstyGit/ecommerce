@@ -6,6 +6,7 @@
    /* Colors */
    --green-primary: hsl(146, 69%, 47%);
    --green-secondary: hsl(146, 74%, 57%);
+   --green-light-primary: hsl(152, 90%, 81%);
    --dark-primary: hsl(220, 11%, 15%);
    --dark-secondary: hsl(0, 0%, 29%);
    --white-primary: hsl(12, 33%, 94%);
@@ -47,7 +48,7 @@ body {
    display: none;
 }
 .form-container{
-   background-color: hsl(152, 90%, 81%);
+   background-color: var(--green-light-primary);
    width: 400px;
    padding: 30px 0px;
    box-shadow: 0px 0px 30px -10px black;
@@ -155,6 +156,7 @@ body {
    overflow: hidden;
    pointer-events: none;
    transform: translateY(-20px);
+   box-shadow: 0px 0px 20px -10px black;
 }
 .dropdown li {
    font-size: 20px;

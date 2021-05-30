@@ -21,7 +21,7 @@ if(localStorage.getItem('cart')) {
       // Assigning values.
       name.innerText = item.split(':')[0];
       quantity.innerText = item.split(':')[1];
-      price.innerText = 10000000;
+      price.innerText = item.split(':')[2];
       delButton.innerText = 'X';
       
       // Adding proper classes and id.

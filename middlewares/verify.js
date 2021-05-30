@@ -50,3 +50,54 @@ module.exports.isModerator = (req, res, next) => {
       res.redirect('/');
    }
 }
+
+module.exports.shopOwner = (req, res, next) => {
+   if(req.user) {
+      const sql = `SELECT * FROM shops WHERE id = ${db.escape(req.params.id)}`;
+      db.query(sql, (err, result) => {
+         if(err) {
+            console.error(err);
+         }
+         else {
+            // console.log(result[0].users_id, req.user.id);
+            if(result[0].users_id === req.user.id) {
+               req.user.isOwner = true;
+            }
+            else {
+               req.user.isOwner = false;
+            }
+         }
+         next();
+      })
+   }
+   else {
+      next();
+   }
+}
+
+module.exports.productShopOwner = (req, res, next) => {
+   if(req.user) {
+      let sql = `SELECT * FROM products WHERE id = ${db.escape(req.params.id)}`;
+      db.query(sql, (err, product) => {
+         if(err) {
+            console.error(err);
+         }
+         else {
+            sql = `SELECT * FROM shops WHERE id = ${db.escape(product[0].shops_id)}`;
+            db.query(sql, (err, result) => {
+               if(result[0].users_id === req.user.id) {
+                  req.user.isOwner = true;
+               }
+               else {
+                  req.user.isOwner = false;
+               }
+            })
+         }
+         next();
+      })
+   }
+   else {
+      next();
+   }
+}
+

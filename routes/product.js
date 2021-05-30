@@ -2,10 +2,10 @@
 const router = require('express').Router();
 const path = require('path');
 const db = require('../database/database.js');
-const {loginRequired} = require('../middlewares/verify.js');
+const {loginRequired, productShopOwner} = require('../middlewares/verify.js');
 const upload = require('../database/upload.js');
 
-router.get('/:id', (req, res) => {
+router.get('/:id', productShopOwner, (req, res) => {
    // Check if there is a user.
    let user = undefined;
    if(req.user) {
@@ -14,7 +14,8 @@ router.get('/:id', (req, res) => {
    // Get the product and all the comments of that product.
    const sql = `SELECT p.name as productName, p.image, p.shops_id, p.id as product_id,
                p.description as productDescription, u.name as username,
-               c.content as commentContent, c.time as commentTime
+               c.content as commentContent, c.time as commentTime,
+               p.verify as verify, p.price as price
                FROM products as p
                LEFT JOIN comments as c
                ON p.id = c.products_id
@@ -75,6 +76,17 @@ router.get('/:id/delete', (req, res) => {
          res.redirect('/');
       })
    })
+})
+
+router.post('/:id/verify', (req, res) => {
+   const sql = `UPDATE products SET verify = 'waiting' WHERE id = ${req.params.id}`;
+   db.query(sql, (err, result) => {
+      if(err) {
+         console.error(err);
+         res.json({"status": "Error"});
+      }
+   })
+   res.json({"status": "success"})
 })
 
 

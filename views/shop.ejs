@@ -25,15 +25,18 @@
                <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
                <%if(user.type === 'admin') {%>
                   <li><a href="/moderation/admin">Admin Panel</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
                <%}%>
                <%if(user.type === 'moderator') {%>
-                  <li><a href="/moderation/admin">Moderation</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
                <%}%>
-               <!-- uses js to change page. -->
-               <li id="update-shop-info" class="new-shop-li">Update shop</li>
-               <!-- uses js to change page. -->
-               <li id="add-product" class="new-shop-li">Add Product</li>
-               <li><a href="/shop/<%=shop.id%>/delete">Delete Shop</a></li>
+               <%if(user.isOwner) {%>
+                  <!-- uses js to change page. -->
+                  <li id="update-shop-info" class="new-shop-li">Update shop</li>
+                  <!-- uses js to change page. -->
+                  <li id="add-product" class="new-shop-li">Add Product</li>
+                  <li><a href="/shop/<%=shop.id%>/delete">Delete Shop</a></li>
+               <%}%>
                <li><a href="/cart">My Cart</a></li>
                <li><a href="/auth/logout">Sign Out</a></li>
             <%} else {%>
