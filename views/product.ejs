@@ -59,7 +59,7 @@
                <% if (user) { %>
                   <% if(user.isOwner) { %>
                      <% if(products[0].verify === 'true') { %>
-                        <button class="btn product-btn" >VERIFIED</button>
+                        <button class="verified-btn" >VERIFIED</button>
                      <% } else if(products[0].verify === 'false') { %>
                         <button class="btn product-btn" id="verify-btn">VERIFY</button>
                      <% } else if(products[0].verify === 'waiting') { %>

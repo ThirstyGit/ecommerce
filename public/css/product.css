@@ -51,6 +51,13 @@
 .product-nav-btn-container {
    margin-right: 10px;
 }
+.verified-btn {
+    background-color: transparent;
+    border: solid 2px var(--green-secondary);
+    font-size: 1.5rem;
+    padding: 0.5em 4em;
+    border-radius: 5px;
+}
 .login-btn {
     width: 50%;
     text-align: center;

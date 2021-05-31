@@ -10,7 +10,7 @@ removeBtns.forEach(removeBtn => {
 
 verifyBtns.forEach(verifyBtn => {
    verifyBtn.addEventListener('click', () => {
-      removeBtn.parentElement.parentElement.remove();
+      verifyBtn.parentElement.parentElement.remove();
       fetch(`/moderation/${verifyBtn.value}/verify`);
    })
 })
