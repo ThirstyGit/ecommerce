@@ -109,6 +109,7 @@ body {
    z-index: 1;
 }
 .search-bar{
+   box-sizing: border-box;
    outline:none;
    font-size: 30px;
    width: 100%;
